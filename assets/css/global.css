@@ -733,3 +733,15 @@ strong{
 {
   border-radius: 10px;
 }
+.w-100
+{
+  width: 100%;
+}
+.flex
+{
+  display:flex;
+}
+.right
+{
+  justify-content: flex-end;
+}
