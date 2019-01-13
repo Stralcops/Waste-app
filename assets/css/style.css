@@ -7,8 +7,24 @@ html{
   margin-top:  64px;
   /* margin-left: 300px; */
   padding: 50px;
-  
+
 }
+.swal-button--cancel
+{
+  color: #555;
+background-color: #efefef;
+}
+ .dropdown-content li
+{
+  text-align: center !important;
+
+}
+.dropdown-content
+{
+  margin-left: 50px !important;
+  min-width: 60px !important;
+}
+
 .nav
 {
   height: 64px;

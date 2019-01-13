@@ -15,9 +15,12 @@
             </thead>
             <tbody>
               <?php
+                $i = 0;
               $query = $this->db->get('t_arme');
               foreach ($query->result() as $row)
               {
+
+                $i++;
            ?>
                 <tr>
                     <td> <?php echo $row->nom_arme ?></td>
@@ -45,7 +48,7 @@
                      ?></td>
                     <td><?php echo $row->rar_arme ?></td>
                     <td>
-                      <?php if($row->typede_arme == 1)
+                      <?php if($row->type_arme > 0)
                       {
                         echo "Létal";
                       }
@@ -53,14 +56,15 @@
                         echo "Non létal";
                       }?>
                     </td>
-                    <td>
-                      <a class='dropdown-trigger btn red darken-4 ' href='#' data-target='dropdown1'><i class="material-icons">settings</i> </a>
-                      <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">Acheter</a></li>
-                        <!-- <li><a href="#!"></a></li> -->
+                    <td class="">
+                      <a class='dropdown-trigger grey-text ' href='#' data-target='dropdown<?php echo $i  ?>'><i class="material-icons">settings</i> </a>
+
+                      <ul id='dropdown<?php echo $i  ?>' class='dropdown-content'>
+                        <li class=" center"> <a  class=" center green-text"> <i class="material-icons m-0">local_grocery_store</i> </a></li>
+                        <li>   <a class=" center blue-text "> <i class="material-icons">create</i></a></li>
+                        <li>   <a id="swalRemove" class="swalRemove center red-text "> <i class="material-icons">delete</i></a></li>
 
                       </ul>
-
                     </td>
 
                 </tr>
@@ -111,13 +115,9 @@
                      } ?></td>
                     <td><?php echo $row->cout_armure ?> Pz
                     </td>
-                    <td>
-                      <a class='dropdown-trigger btn red darken-4 ' href='#' data-target='dropdown1'><i class="material-icons">settings</i> </a>
-                      <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">Acheter</a></li>
-                        <!-- <li><a href="#!"></a></li> -->
-
-                      </ul>
+                    <td class="row">
+                      <li><a  class="swalRemove btn blue darken-4 col s4"> <i class="material-icons">local_grocery_store</i> </a></li>
+                      <li><a id="swalRemove" class="swalRemove red darken-4 btn col s4 offset-s1"> <i class="material-icons">delete</i></a></li>
 
                     </td>
 
@@ -168,7 +168,7 @@
                      } ?></td>
                     <td><?php echo $row->cout_armure ?> Pz
                     </td>
-                    <td>
+                    <td class="row">
                       <a class='dropdown-trigger btn red darken-4 ' href='#' data-target='dropdown1'><i class="material-icons">settings</i> </a>
                       <ul id='dropdown1' class='dropdown-content'>
                         <li><a href="#!">Acheter</a></li>

@@ -1,6 +1,8 @@
 
 $(document).ready(function()
 {
+  M.AutoInit();
+
   $('.draggable').draggable();
   $('.sortable').sortable();
     $('.dataTable').DataTable({
@@ -18,5 +20,24 @@ $(document).ready(function()
 
     $('.dropdown-trigger').dropdown();
     $('.collapsible').collapsible();
+    $('.swalRemove').click( function()
+    {
+      swal({
+    title: "Voulez-vous vraiment supprimer cet élément ?",
+    text: "Une fois supprimé, il est impossible de restaurer cet élément!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("D'accord ! Cet élément a bien été supprimé !", {
+        icon: "success",
+      });
+    } else {
+      swal("D'accord, l'élément est conservé !");
+    }
+    });
 
-});
+      });
+  });
