@@ -1,0 +1,60 @@
+html{
+  font-family: 'Raleway', sans-serif;
+}
+
+#content
+{
+  margin-top:  64px;
+  /* margin-left: 300px; */
+  padding: 50px;
+  
+}
+.nav
+{
+  height: 64px;
+  /* left: 300px; */
+  position: absolute;
+  top:0;
+  right: 0;
+  /* left: 64; */
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  width:100%;
+}
+.nav ul
+{
+  display: flex;
+}
+.nav ul li
+{
+  display: flex;
+  color:white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.nav ul li a
+{
+  display: flex;
+  color:white;
+}
+/* .nav::before
+{
+  content:"Wasteland";
+  top:0;
+  left:-3000px;
+  position: absolute;
+  height: 64px;
+  width: 3000px;
+  z-index: 1;
+  background: white;
+  border-bottom: black solid 2px;
+} */
+.side
+{
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  left:0;
+  top:0;
+}

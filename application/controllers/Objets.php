@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pages extends CI_Controller {
+class Objets extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,11 +19,12 @@ class Pages extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-           public function view($page = 'home')
+           public function index()
            {
              $this->load->view('templates/header');
-             $this->load->view('pages/'.$page);
+             $this->load->view('pages/objets');
              $this->load->view('templates/footer');
            }
            
+
 }
