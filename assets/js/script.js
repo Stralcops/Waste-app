@@ -1,6 +1,8 @@
 
 $(document).ready(function()
 {
+
+
   M.AutoInit();
 
   $('.draggable').draggable();

@@ -3,6 +3,7 @@
   <li>
     <div class="collapsible-header"><i class="fas fa-skull-crossbones"></i>  <h1 class="m-0 f-10">Armes</h1></div>
     <div class="collapsible-body"><table id="example" class="display dataTable" style="width:100%">
+
             <thead>
                 <tr>
                     <th>Arme</th>
@@ -13,6 +14,43 @@
                     <th>Action</th>
                 </tr>
             </thead>
+            <a class="btn-floating btn-large waves-effect waves-light red  mr-60 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Ajouter une arme</h4>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+
+                        <div class="input-field col s3">
+                          <input name="nom_arme" id="nom_arme" type="text" class="validate">
+                          <label for="nom_arme">Nom de l'arme</label>
+                        </div>
+                        <div class="input-field col s2">
+                          <input id="bonus_attaque" type="text" class="validate">
+                          <label for="bonus_attaque">Bonus Attaque</label>
+                        </div>
+                                <div class="input-field center col s1 valign-wrapper"><span class="f-20">/</span>  </div>
+                        <div class="input-field col s2">
+                          <input id="bonus_defense" type="text" class="validate">
+                          <label for="bonus_defense">Bonus Défense</label>
+                        </div>
+                        <div class="input-field col s2">
+                          <input id="bonus_defense" type="text" class="validate">
+                          <label for="bonus_defense">Bonus Défense</label>
+                        </div>
+                      </div>
+
+
+                    </form>
+                  </div>
+
+
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+              </div>
             <tbody>
               <?php
                 $i = 0;

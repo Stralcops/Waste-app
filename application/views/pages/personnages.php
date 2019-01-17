@@ -85,7 +85,7 @@
             <tr>
                 <td>Sonya Frost</td>
                 <td>Software Engineer</td>
-                <td>Edinburgh</td>
+                <td>Edinburgh</td>-
                 <td>23</td>
                 <td>2008/12/13</td>
                 <td>$103,600</td>
