@@ -1,7 +1,12 @@
 
+
 $(document).ready(function()
 {
 
+  // CALCUL INITIATIVE
+
+
+  // ++++++++++++++++++++++++++++++
 
   M.AutoInit();
 

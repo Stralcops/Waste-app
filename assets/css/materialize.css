@@ -2500,10 +2500,6 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -6131,7 +6127,7 @@ input[type=date]:not(.browser-default),
 input[type=datetime]:not(.browser-default),
 input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
-input[type=number]:not(.browser-default),
+
 input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
@@ -6173,8 +6169,8 @@ input[type=datetime-local]:not(.browser-default):disabled,
 input[type=datetime-local]:not(.browser-default)[readonly="readonly"],
 input[type=tel]:not(.browser-default):disabled,
 input[type=tel]:not(.browser-default)[readonly="readonly"],
-input[type=number]:not(.browser-default):disabled,
-input[type=number]:not(.browser-default)[readonly="readonly"],
+
+
 input[type=search]:not(.browser-default):disabled,
 input[type=search]:not(.browser-default)[readonly="readonly"],
 textarea.materialize-textarea:disabled,
@@ -6203,8 +6199,6 @@ input[type=datetime-local]:not(.browser-default):disabled + label,
 input[type=datetime-local]:not(.browser-default)[readonly="readonly"] + label,
 input[type=tel]:not(.browser-default):disabled + label,
 input[type=tel]:not(.browser-default)[readonly="readonly"] + label,
-input[type=number]:not(.browser-default):disabled + label,
-input[type=number]:not(.browser-default)[readonly="readonly"] + label,
 input[type=search]:not(.browser-default):disabled + label,
 input[type=search]:not(.browser-default)[readonly="readonly"] + label,
 textarea.materialize-textarea:disabled + label,
@@ -6222,7 +6216,6 @@ input[type=date]:not(.browser-default):focus:not([readonly]),
 input[type=datetime]:not(.browser-default):focus:not([readonly]),
 input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
 input[type=tel]:not(.browser-default):focus:not([readonly]),
-input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #26a69a;
@@ -6240,7 +6233,6 @@ input[type=date]:not(.browser-default):focus:not([readonly]) + label,
 input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
 input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
 input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
-input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #26a69a;
@@ -6256,7 +6248,6 @@ input[type=date]:not(.browser-default):focus.valid ~ label,
 input[type=datetime]:not(.browser-default):focus.valid ~ label,
 input[type=datetime-local]:not(.browser-default):focus.valid ~ label,
 input[type=tel]:not(.browser-default):focus.valid ~ label,
-input[type=number]:not(.browser-default):focus.valid ~ label,
 input[type=search]:not(.browser-default):focus.valid ~ label,
 textarea.materialize-textarea:focus.valid ~ label {
   color: #4CAF50;
@@ -6272,7 +6263,6 @@ input[type=date]:not(.browser-default):focus.invalid ~ label,
 input[type=datetime]:not(.browser-default):focus.invalid ~ label,
 input[type=datetime-local]:not(.browser-default):focus.invalid ~ label,
 input[type=tel]:not(.browser-default):focus.invalid ~ label,
-input[type=number]:not(.browser-default):focus.invalid ~ label,
 input[type=search]:not(.browser-default):focus.invalid ~ label,
 textarea.materialize-textarea:focus.invalid ~ label {
   color: #F44336;
@@ -6288,7 +6278,6 @@ input[type=date]:not(.browser-default).validate + label,
 input[type=datetime]:not(.browser-default).validate + label,
 input[type=datetime-local]:not(.browser-default).validate + label,
 input[type=tel]:not(.browser-default).validate + label,
-input[type=number]:not(.browser-default).validate + label,
 input[type=search]:not(.browser-default).validate + label,
 textarea.materialize-textarea.validate + label {
   width: 100%;
@@ -6314,8 +6303,6 @@ input.valid[type=datetime-local]:not(.browser-default),
 input.valid[type=datetime-local]:not(.browser-default):focus,
 input.valid[type=tel]:not(.browser-default),
 input.valid[type=tel]:not(.browser-default):focus,
-input.valid[type=number]:not(.browser-default),
-input.valid[type=number]:not(.browser-default):focus,
 input.valid[type=search]:not(.browser-default),
 input.valid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.valid,
@@ -6344,8 +6331,6 @@ input.invalid[type=datetime-local]:not(.browser-default),
 input.invalid[type=datetime-local]:not(.browser-default):focus,
 input.invalid[type=tel]:not(.browser-default),
 input.invalid[type=tel]:not(.browser-default):focus,
-input.invalid[type=number]:not(.browser-default),
-input.invalid[type=number]:not(.browser-default):focus,
 input.invalid[type=search]:not(.browser-default),
 input.invalid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.invalid,
@@ -6396,10 +6381,7 @@ input[type=tel]:not(.browser-default).valid ~ .helper-text[data-success],
 input[type=tel]:not(.browser-default):focus.valid ~ .helper-text[data-success],
 input[type=tel]:not(.browser-default).invalid ~ .helper-text[data-error],
 input[type=tel]:not(.browser-default):focus.invalid ~ .helper-text[data-error],
-input[type=number]:not(.browser-default).valid ~ .helper-text[data-success],
-input[type=number]:not(.browser-default):focus.valid ~ .helper-text[data-success],
-input[type=number]:not(.browser-default).invalid ~ .helper-text[data-error],
-input[type=number]:not(.browser-default):focus.invalid ~ .helper-text[data-error],
+
 input[type=search]:not(.browser-default).valid ~ .helper-text[data-success],
 input[type=search]:not(.browser-default):focus.valid ~ .helper-text[data-success],
 input[type=search]:not(.browser-default).invalid ~ .helper-text[data-error],
@@ -6437,8 +6419,7 @@ input[type=datetime-local]:not(.browser-default).valid ~ .helper-text:after,
 input[type=datetime-local]:not(.browser-default):focus.valid ~ .helper-text:after,
 input[type=tel]:not(.browser-default).valid ~ .helper-text:after,
 input[type=tel]:not(.browser-default):focus.valid ~ .helper-text:after,
-input[type=number]:not(.browser-default).valid ~ .helper-text:after,
-input[type=number]:not(.browser-default):focus.valid ~ .helper-text:after,
+
 input[type=search]:not(.browser-default).valid ~ .helper-text:after,
 input[type=search]:not(.browser-default):focus.valid ~ .helper-text:after,
 textarea.materialize-textarea.valid ~ .helper-text:after,
@@ -6467,7 +6448,7 @@ input[type=datetime-local]:not(.browser-default).invalid ~ .helper-text:after,
 input[type=datetime-local]:not(.browser-default):focus.invalid ~ .helper-text:after,
 input[type=tel]:not(.browser-default).invalid ~ .helper-text:after,
 input[type=tel]:not(.browser-default):focus.invalid ~ .helper-text:after,
-input[type=number]:not(.browser-default).invalid ~ .helper-text:after,
+
 input[type=number]:not(.browser-default):focus.invalid ~ .helper-text:after,
 input[type=search]:not(.browser-default).invalid ~ .helper-text:after,
 input[type=search]:not(.browser-default):focus.invalid ~ .helper-text:after,

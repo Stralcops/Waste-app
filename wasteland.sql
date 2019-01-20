@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 20 Janvier 2019 à 20:57
+-- Généré le :  Dim 20 Janvier 2019 à 23:56
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -200,44 +200,39 @@ CREATE TABLE IF NOT EXISTS `t_pj` (
   `chp_user` int(11) NOT NULL,
   `psy_user` int(11) NOT NULL,
   `cpsy_user` int(11) NOT NULL,
-  `adr_id` int(11) NOT NULL,
-  `armure_id` int(11) NOT NULL,
-  `pui_id` int(11) NOT NULL,
-  `cla_id` int(11) NOT NULL,
-  `pre_id` int(11) NOT NULL,
-  `tre_id` int(11) NOT NULL,
-  `armesdis_id` int(11) NOT NULL,
-  `coer_id` int(11) NOT NULL,
-  `com_id` int(11) NOT NULL,
-  `dis_id` int(11) NOT NULL,
-  `filou_id` int(11) NOT NULL,
-  `melee_id` int(11) NOT NULL,
-  `monte_id` int(11) NOT NULL,
-  `mouv_id` int(11) NOT NULL,
-  `nage_id` int(11) NOT NULL,
-  `navig_id` int(11) NOT NULL,
-  `perc_id` int(11) NOT NULL,
-  `persu_id` int(11) NOT NULL,
-  `soin_id` int(11) NOT NULL,
-  `survie_id` int(11) NOT NULL,
+  `adr_user` int(11) NOT NULL,
+  `armure_user` int(11) NOT NULL,
+  `pui_user` int(11) NOT NULL,
+  `cla_user` int(11) NOT NULL,
+  `pre_user` int(11) NOT NULL,
+  `tre_user` int(11) NOT NULL,
+  `armesdis_user` int(11) NOT NULL,
+  `coer_user` int(11) NOT NULL,
+  `com_user` int(11) NOT NULL,
+  `dis_user` int(11) NOT NULL,
+  `filou_user` int(11) NOT NULL,
+  `melee_user` int(11) NOT NULL,
+  `monte_user` int(11) NOT NULL,
+  `mouv_user` int(11) NOT NULL,
+  `nage_user` int(11) NOT NULL,
+  `navig_user` int(11) NOT NULL,
+  `perc_user` int(11) NOT NULL,
+  `persu_user` int(11) NOT NULL,
+  `soin_user` int(11) NOT NULL,
+  `survie_user` int(11) NOT NULL,
+  `bonus_degats_user` int(11) NOT NULL,
   `photo_pj` text NOT NULL,
-  `posX_user` float NOT NULL,
-  `posY_user` float NOT NULL,
+  `posX_user` float DEFAULT NULL,
+  `posY_user` float DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Contenu de la table `t_pj`
 --
 
-INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `hp_user`, `chp_user`, `psy_user`, `cpsy_user`, `adr_id`, `armure_id`, `pui_id`, `cla_id`, `pre_id`, `tre_id`, `armesdis_id`, `coer_id`, `com_id`, `dis_id`, `filou_id`, `melee_id`, `monte_id`, `mouv_id`, `nage_id`, `navig_id`, `perc_id`, `persu_id`, `soin_id`, `survie_id`, `photo_pj`, `posX_user`, `posY_user`) VALUES
-(24, 'Pierre', 'Raphaël', 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(23, 'Nicolas', 'Alwyn', 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(22, 'Matthieu', 'Xac''thu', 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(21, 'Jean', 'Maewen', 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(25, 'Gwendo', 'Loopix', 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(20, 'Arthur', 'Arthur', 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0),
-(26, 'Hervé', 'Duros', 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0);
+INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `hp_user`, `chp_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
+(27, 'Gwendoline', 'Hilda', 33, 31, 33, 33, 5, 6, 7, 5, 8, 8, 1, 2, 1, 3, 1, 4, 1, 1, 1, 3, 2, 1, 1, 1, 2, 'https://cdnb.artstation.com/p/assets/images/images/001/577/821/large/si-woo-kim-thief-girl.jpg?1448906257', NULL, NULL);
 
 -- --------------------------------------------------------
 

@@ -35,6 +35,7 @@
        <div class="nav-wrapper">
            <ul id="nav-mobile" class="right hide-on-med-and-down">
              <li><a href="<?php echo base_url() ?>">Accueil</a></li>
+             <li><a href="<?php echo base_url() ?>combat.php">Combat</a></li>
 
              <li> <a class='dropdown-trigger ' href='<?php echo base_url() ?>objets.php' data-target='dropdown1'>Objets</a></li>
 

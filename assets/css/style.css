@@ -1,12 +1,21 @@
 html{
   font-family: 'Raleway', sans-serif;
 }
-
+input[type="number"]
+{
+  width: 50px;
+  -webkit-appearance: none;
+}
 #content
 {
   margin-top:  64px;
   /* margin-left: 300px; */
   padding: 50px;
+
+}
+.bgBrown
+{
+  background-color: #362d24;
 
 }
 .swal-button--cancel
