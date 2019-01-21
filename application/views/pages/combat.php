@@ -162,13 +162,13 @@ console.log("Puissance : "+ puissance);
     url:"<?php echo base_url() ?>Combats/update_pj",
     data: data,
     type:"POST",
-    success: function()
+    success: function(result)
     {
-      console.log('Cool');
+      console.log(result);
     },
     error: function()
     {
-      alert('Erreur');
+      alert(result);
     }
   });
 }

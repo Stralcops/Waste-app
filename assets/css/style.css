@@ -1,9 +1,87 @@
+
+.feuillePerso .divFixe
+{
+  min-height: 412px;
+  max-height: 412px;
+}
+.feuillePerso   input
+  {
+    background-color:  #fafafa !important;
+    font-weight: bold;
+  }
+.feuillePerso .divFixe2
+{
+  min-height: 476px;
+  max-height: 476px;
+}
+.feuillePerso {
+  font-family: 'Oswald', sans-serif !important;
+  max-height: 700px;
+  min-height: 700px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-content: flex-end;
+}
+.feuillePerso h1 {
+  font-family: 'Oswald', sans-serif !important;
+}
+
+.feuillePerso input[type="checkbox"]
+{
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+.inputNumberS
+{
+  width: 40px !important;
+}
+/* .sante input {
+  width: 60px !important;t
+} */
+.sante input[type="text"] {
+  width: inherit !important;
+}
+.feuillePerso input[type="text"], .feuillePerso input[type="number"]
+{
+
+
+  padding: 5px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+    border: none !important;
+
+    -webkit-border-radius: 3px !important;
+       -moz-border-radius: 3px !important;
+            border-radius: 3px !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+            box-shadow: none !important;
+    /* -webkit-transition: none !important;
+       -moz-transition: none  !important;
+        -ms-transition: none  !important;
+         -o-transition: none  !important;
+            transition:none  !important; */
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s !important;
+       -moz-transition: border linear 0.2s, box-shadow linear 0.2s !important;
+        -ms-transition: border linear 0.2s, box-shadow linear 0.2s !important;
+         -o-transition: border linear 0.2s, box-shadow linear 0.2s !important;
+            transition: border linear 0.2s, box-shadow linear 0.2s !important;
+
+}
 html{
   font-family: 'Raleway', sans-serif;
 }
-input[type="number"]
+/* input[type="number"]
 {
   width: 50px;
+  -webkit-appearance: none;
+} */
+input[type="number"]
+{
+  width: inherit;
   -webkit-appearance: none;
 }
 #content
