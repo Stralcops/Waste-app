@@ -1,4 +1,7 @@
-
+.inputCenter
+{
+  text-align: right;
+}
 .feuillePerso .divFixe
 {
   min-height: 412px;

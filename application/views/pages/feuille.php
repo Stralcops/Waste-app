@@ -14,7 +14,7 @@
       <div class="col s10">
         <div class="row  m-0">
           <div class="col s5">
-          <span class="valign-wrapper tt-u">Nom:<input id="nom_user" type="text" name="" value="<?php echo $info_user->nom_user ?>"> </span>
+          <span class="valign-wrapper tt-u m-0">Nom:<input id="nom_user" type="text" name="" value="<?php echo $info_user->nom_user ?>"> </span>
           </div>
           <div class="col s5">
             <span  class="valign-wrapper tt-u">Joueur: <input id="joueur_user" type="text" name="" value="<?php echo $info_user->joueur_user ?>"> </span>
@@ -57,17 +57,17 @@
   </div>
   <div class="row b-s m-0 mb-5">
     <div class="col s3 center">
-      <h1 class="td-u  m-0 f-10">Bonne aventure</h1>
-      <input id="cba_user" type="number" name="" min="0" max="<?php echo $info_user->ba_user ?>" value="<?php echo $info_user->cba_user ?>">/
+      <h1 class="td-u  m-0 f-10 ">Bonne aventure</h1>
+      <input id="cba_user" class="right-align" type="number" name="" min="0" max="<?php echo $info_user->ba_user ?>" value="<?php echo $info_user->cba_user ?>">/
       <input id="ba_user" type="number" name="" min="0" value="<?php echo $info_user->ba_user ?>">
     </div>
     <div class="col s3 center">
       <h1 class="td-u  m-0 f-10">Eclat</h1>
-      <input id="eclat_user" type="number" min="0" name="" value="<?php echo $info_user->eclat_user ?>">
+      <input id="eclat_user" class="center" type="number" min="0" name="" value="<?php echo $info_user->eclat_user ?>">
     </div>
     <div class="col s3 offset-s1">
       <h1 class="td-u  m-0 f-10">Expérience</h1>
-      <input id="exp_user" type="number" min="0"name="" value="<?php echo $info_user->exp_user ?>">
+      <input id="exp_user"  class="center-align"  type="number" min="0"name="" value="<?php echo $info_user->exp_user ?>">
     </div>
   </div>
   <div class="row m-0 mb-5">
@@ -81,7 +81,7 @@
           <input id="pui_user" type="number" name="" value="<?php echo $info_user->pui_user ?>">
           <span class="tt-u">cla</span>irvoyance:
           <input id="cla_user" type="number" name="" value="<?php echo $info_user->cla_user ?>">
-          <span class="tt-u">pre</span>sance:
+          <span class="tt-u">pre</span>sence:
           <input id="pre_user" type="number" name="" value="<?php echo $info_user->pre_user ?>">
           <span class="tt-u">tre</span>mpe:
           <input id="tre_user" type="number" name="" value="<?php echo $info_user->tre_user ?>">
@@ -150,16 +150,16 @@
             <div class="col s12">
               <div class="row m-0">
                 <div class="col s12 center valign-wrapper">
-                  <h1 class=" m-0 f-10">Létale</h1>
-                  <input id="chp_user" class="right-align"type="number" name="" value="<?php echo $info_user->chp_user ?>">/
-                  <input id="hp_user" type="number" name="" value="<?php echo $info_user->hp_user ?>">
+                  <h1 class=" m-0 f-10">Létal</h1>
+                  <input max="<?php echo $info_user->hp_user  ?>" min="0" id="chp_user" class="right-align"type="number" name="" value="<?php echo $info_user->chp_user ?>">/
+                  <input disabled id="hp_user" type="number" name="" value="<?php echo $info_user->hp_user ?>">
                 </div>
               </div>
               <div class="row m-0">
                 <div class="col s12 center valign-wrapper">
                   <h1 class=" m-0 f-10">Blessure</h1>
-                  <input id="chpnl_user" class="right-align"type="number" name="" value="<?php echo $info_user->chpnl_user ?>">/
-                  <input id="hp_user" type="number" name="" value="<?php echo $info_user->hp_user ?>">
+                  <input max="<?php echo $info_user->hp_user  ?>" min="0" id="chpnl_user" class="right-align"type="number" name="" value="<?php echo $info_user->chpnl_user ?>">/
+                  <input disabled id="hpnl_user" type="number" name="" value="<?php echo $info_user->hp_user ?>">
                 </div>
               </div>
 
@@ -170,8 +170,8 @@
 
                   <div class="col s12 center valign-wrapper">
                     <h1 class=" m-0 f-10">Niveau: </h1>
-                    <input id="cpsy_user" class="right-align"type="number" name="" value="<?php echo $info_user->cpsy_user ?>">/
-                    <input id="psy_user" type="number" name="" value="<?php echo $info_user->psy_user ?>">
+                    <input max="<?php echo $info_user->psy_user  ?>" min="0" id="cpsy_user" class="right-align"type="number" name="" value="<?php echo $info_user->cpsy_user ?>">/
+                    <input disabled id="psy_user" type="number" name="" value="<?php echo $info_user->psy_user ?>">
                   </div>
 
 
@@ -181,7 +181,7 @@
             </div>
             <div class="col s12 mt-20">
               <h1 class="td-u m-0 f-10">Capacité spéciale: </h1>
-              <textarea name="text" rows="8" cols="80"></textarea>
+              <textarea id="cap_user" name="text" rows="8" cols="80"><?php echo $info_user->cap_user ?></textarea>
             </div>
           </div>
 
@@ -192,13 +192,13 @@
       <h1 class="f-10 td-u m-0 p-5 center">Combats</h1>
       <div class="row">
         <div class="col s6">
-          <span>Initiative:</span><input id="initiaive_user" type="number" name="" value="<?php echo $info_user->adr_user ?>">
+          <span>Initiative:</span><input disabled id="initiaive_user" type="number" name="" value="<?php echo $info_user->adr_user ?>">
         </div>
         <div class="col s6">
-          <span>Bonus:</span><input id="bonus_degats" type="number" name="" value="<?php echo $info_user->bonus_degats_user ?>">
+          <span>Bonus:</span><input disabled id="bonus_degats" type="number" name="" value="<?php echo $info_user->bonus_degats_user ?>">
         </div>
         <div class="col s6">
-          <span>Vitesse:</span><input id="" type="number" name="" value="">
+          <span>Vitesse:</span><input disabled id="bonus_vitesse" type="number" name="" value="">
         </div>
         <div class="col s6">
           <span>Défense:</span><input id="" type="number" name="" value="">
@@ -277,10 +277,79 @@ $('input').change(function()
 {
 update_pj();
 });
+$('textarea').change(function()
+{
+update_pj();
+});
 
 
 function update_pj()
 {
+
+
+//table de calcul bonus Vitesse
+var bonus_vitesse;
+var adresse = $('#adr_user').val();
+switch(adresse) {
+case "1":
+  bonus_vitesse = -2;
+  break;
+case "2":
+  bonus_vitesse = -1;
+  break;
+case "3":
+  bonus_vitesse = -1;
+  break;
+case "4":
+bonus_vitesse = 0;
+  break;
+case "5":
+bonus_vitesse = 0;
+  break;
+case "6":
+bonus_vitesse = 0;
+  break;
+case "7":
+bonus_vitesse = 1;
+  break;
+case "8":
+bonus_vitesse = 1;
+  break;
+case "9":
+bonus_vitesse = 2;
+  break;
+case "10":
+bonus_vitesse = 2;
+  break;
+case "11":
+bonus_vitesse = 3;
+  break;
+case "12":
+bonus_vitesse = 3;
+  break;
+case "13":
+bonus_vitesse = 4;
+break;
+case "14":
+bonus_vitesse = 4;
+break;
+  case "15":
+  bonus_vitesse = 5;
+    break;
+case "16":
+bonus_vitesse = 5;
+  break;
+case "17":
+bonus_vitesse = 6;
+  break;
+case "18":
+bonus_vitesse = 6;
+  break;
+default:
+  bonus_vitesse = 0;
+}
+//////////////////////////////////
+  //table de calcul bonus dégâts
   var bonus_degats;
   var puissance = $('#pui_user').val();
   switch(puissance) {
@@ -288,6 +357,9 @@ function update_pj()
     bonus_degats = -2;
     break;
   case "2":
+    bonus_degats = -1;
+    break;
+  case "3":
     bonus_degats = -1;
     break;
   case "4":
@@ -317,10 +389,19 @@ function update_pj()
   case "12":
   bonus_degats = 5;
     break;
+    case "13":
+    bonus_degats = 5;
+      break;
   case "14":
   bonus_degats = 6;
     break;
+  case "15":
+  bonus_degats = 6;
+    break;
   case "16":
+  bonus_degats = 7;
+    break;
+  case "17":
   bonus_degats = 7;
     break;
   case "18":
@@ -329,12 +410,43 @@ function update_pj()
   default:
     bonus_degats = 0;
 }
-console.log("Bonus dégats : "+ bonus_degats);
-console.log("Puissance : "+ puissance);
+//======================================
+// calcul santé
+var puissance_user = $("#pui_user").val();
+var trempe_user = $("#tre_user").val();
+var hp_user = (parseInt( puissance_user) +  parseInt(trempe_user)) *2 +5;
+// ==================
+//calcul psyché
+var clairvoyance_user = $("#cla_user").val();
+var trempe_user = $("#tre_user").val();
+var psy_user = (parseInt( clairvoyance_user) +  parseInt(trempe_user)) *2 +5;
+//==============
+//calcul
   $('#initiaive_user').val( $('#adr_user').val());
   $('#bonus_degats').val(bonus_degats);
+  $('#bonus_vitesse').val(bonus_vitesse);
+  $('#hp_user').val(hp_user);
+  $('#hpnl_user').val(hp_user);
+  $('#psy_user').val(psy_user);
    var data = {
       id_user :  $('#user_id').val(),
+      joueur_user :  $('#joueur_user').val(),
+      peuple_user :  $('#peuple_user').val(),
+      sexe_user :  $('#sexe_user').val(),
+      metier_user :  $('#metier_user').val(),
+      origine_user :  $('#origine_user').val(),
+      heritage_user :  $('#heritage_user').val(),
+      photo_pj :  $('#photo_pj').val(),
+      ba_user :  $('#ba_user').val(),
+      cba_user :  $('#cba_user').val(),
+      eclat_user :  $('#eclat_user').val(),
+      exp_user :  $('#exp_user').val(),
+      chp_user :  $('#chp_user').val(),
+      hp_user :  $('#hp_user').val(),
+      chpnl_user :  $('#chpnl_user').val(),
+      cpsy_user :  $('#cpsy_user').val(),
+      psy_user :  $('#psy_user').val(),
+      nom_user :  $('#nom_user').val(),
       adr_user :  $('#adr_user').val(),
       pui_user :  $('#pui_user').val(),
       cla_user :  $('#cla_user').val(),
@@ -354,11 +466,13 @@ console.log("Puissance : "+ puissance);
       persu_user :  $('#persu_user').val(),
       soin_user :  $('#soin_user').val(),
       survie_user :  $('#survie_user').val(),
+      cap_user : $('#cap_user').val(),
       bonus_degats :  bonus_degats,
+      bonus_vitesse :  bonus_vitesse,
     };
-
+console.log(data);
   $.ajax({
-    url:"<?php echo base_url() ?>Combats/update_pj",
+    url:"<?php echo base_url() ?>Personnages/update_pj",
     data: data,
     type:"POST",
     success: function(result)
