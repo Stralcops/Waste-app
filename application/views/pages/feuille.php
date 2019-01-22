@@ -204,11 +204,11 @@
           <span>Défense:</span><input id="" type="number" name="" value="">
         </div>
       </div>
-      <div class="row center">
+      <div id="contentArmes" class="row center">
         <div class="col s12">
           <h1 class="m-0 td-u f-10">Arme de mêlée</h1>
 
-            <table class="f-9">
+            <table id="tableArme" class="f-9">
                 <tr>
                   <th>Arme</th>
                   <th>BM</th>
@@ -216,13 +216,65 @@
                   <th>Déf</th>
                   <th>D</th>
                 </tr>
-                <tr>
-                  <td>Hache</td>
-                  <td>2/0</td>
-                  <td>12</td>
-                  <td>11</td>
-                  <td>1D6+2</td>
-                </tr>
+                <?php
+                $i=0;
+                $id_user = $info_user->user_id;
+                $this->db->where('user_id', $id_user);
+                $this->db->select('arme_id');
+                $query = $this->db->get("t_arme_user");
+                $query_arme_user = $query->result();
+                foreach ($query_arme_user as $info_arme_user) {
+                  $id_arme = $info_arme_user->arme_id;
+
+                    $this->db->where("arme_id", $id_arme);
+                    $query = $this->db->get('t_arme');
+                    $query_arme = $query->result();
+                    foreach ($query_arme as $info_arme) {
+                      $nom_arme =  $info_arme->nom_arme;
+                      $bonusdeg_arme = $info_arme->bonusdeg_arme;
+                      $bonusdef_arme = $info_arme->bonusdef_arme;
+
+                      ?>
+
+                      <tr id="trArme<?php echo  $i  ?>">
+                        <td id="nom_arme"><?php echo $nom_arme ?></td>
+                        <td id="bonusdeg_arme"><?php echo $bonusdeg_arme ?>/<?php echo $bonusdef_arme ?></td>
+                        <input type="hidden" name="" id="bonus_degats_arme"value=" <?php echo $info_arme->bonusdeg_arme ?>">
+                        <input type="hidden" name="" id="bonus_def_arme"value="<?php echo $info_arme->bonusdef_arme ?>">
+                        <td class="cap_off_user"></td>
+                        <td class="def_user"></td>
+                        <td class=""><?php echo $info_arme->nbde_arme ?>D<?php echo $info_arme->typede_arme  ?>+<?php echo $info_arme->bonusde_arme ?> </td>
+                      </tr>
+                      <script type="text/javascript">
+                      $(document).ready(function()
+                    {
+
+                        calcul_arme(<?php echo $i ?>, <?php echo $info_user->pui_user ?>, <?php echo $info_user->melee_user ?>, <?php echo $info_arme->bonusdeg_arme ?>, <?php echo $info_user->tre_user ?>, <?php echo $info_arme->bonusdef_arme ?>);
+
+
+
+                      function calcul_arme(row, puissance_user, melee_user, bonus_degats_arme, tre_user, bonus_def_arme)
+                      {
+                        var cap_off_user =parseInt(puissance_user) + parseInt(melee_user) + parseInt(bonus_degats_arme);
+                        var def_user = parseInt(tre_user)  + parseInt(melee_user) + 5 + parseInt(bonus_def_arme);
+                        $('#trArme'+row+' .cap_off_user').html(cap_off_user);
+                        $('#trArme'+row+' .def_user').html(def_user);
+
+                      }
+
+
+
+
+                    });
+
+                      </script>
+                      <?php
+                    }
+
+                    $i++;
+                }
+                 ?>
+
               </table>
 
           </div>
@@ -273,13 +325,24 @@
 <?php } ?>
  <script type="text/javascript">
 
+
+
+
 $('input').change(function()
 {
 update_pj();
+calcul_arme();
+var row=1;
+// $("#tableArme").each(function()
+// {
+//   $("#trArme"+row)
+//   row++;
+// });
 });
 $('textarea').change(function()
 {
 update_pj();
+
 });
 
 
@@ -428,6 +491,7 @@ var psy_user = (parseInt( clairvoyance_user) +  parseInt(trempe_user)) *2 +5;
   $('#hp_user').val(hp_user);
   $('#hpnl_user').val(hp_user);
   $('#psy_user').val(psy_user);
+
    var data = {
       id_user :  $('#user_id').val(),
       joueur_user :  $('#joueur_user').val(),
@@ -478,11 +542,14 @@ console.log(data);
     success: function(result)
     {
       console.log(result);
+
     },
     error: function()
     {
       alert(result);
     }
   });
+
+  console.log('reload');
 }
 </script>

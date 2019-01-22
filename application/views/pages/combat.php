@@ -1,5 +1,5 @@
 <div class="row container">
-  <div class="col s6">
+  <div class="col s12">
     <h1 class="white-text f-20">Voyageurs</h1>
     <ul class="collapsible">
       <?php
@@ -10,51 +10,18 @@
    <li>
      <div class="collapsible-header"><?php echo $info_user->nom_user ?></div>
      <div class="collapsible-body bg-0  ">
-       <img src="<?php echo $info_user->photo_pj ?>" height="auto" width="50%"alt="">
-       <p>
-         PV =  <input type="number" value="<?php echo $info_user->chp_user  ?>">/<?php echo $info_user->hp_user?>
-         Psy =  <input type="number" value="<?php echo $info_user->cpsy_user  ?>">/<?php echo $info_user->psy_user?>
-           </p>
-         <h1 class="f-20">Attributs</h1>
-         <p>
-           <input id="id_user" type="hidden" name="" value="<?php echo $info_user->user_id ?>">
-           Adresse =  <input id="adresse" type="number" value="<?php echo $info_user->adr_user  ?>"> <br>
-           Puissance =  <input id="puissance" type="number" value="<?php echo $info_user->pui_user  ?>"><br>
-           Clairvoyance =  <input id="clairvoyance" type="number" value="<?php echo $info_user->cla_user  ?>"><br>
-           Présence =  <input id= "presence" type="number" value="<?php echo $info_user->pre_user  ?>"><br>
-           Trempe =  <input id="trempe" type="number" value="<?php echo $info_user->tre_user  ?>"><br>
-         </p>
-   <h1 class="f-20">Compétences</h1>
-   <p>
-           Armes à distance =  <input id="armes_distance" type="number" value="<?php echo $info_user->armesdis_user  ?>"><br>
-           Coercition =  <input id="coercition" type="number" value="<?php echo $info_user->coer_user  ?>"><br>
-           Commerce =  <input id="commerce" type="number" value="<?php echo $info_user->com_user  ?>"><br>
-           Discrétion =  <input id="discretion" type="number" value="<?php echo $info_user->dis_user  ?>"><br>
-           Filouterie =  <input id="filouterie" type="number" value="<?php echo $info_user->filou_user  ?>"><br>
-           Mélée =  <input id="melee" type="number" value="<?php echo $info_user->melee_user  ?>"><br>
-           Monte =  <input id= "monte" type="number" value="<?php echo $info_user->monte_user  ?>"><br>
-           Mouvement =  <input id="mouvement" type="number" value="<?php echo $info_user->mouv_user  ?>"><br>
-           Nage =  <input id="nage" type="number" value="<?php echo $info_user->nage_user  ?>"><br>
-           Navigation =  <input id="navigation" type="number" value="<?php echo $info_user->navig_user  ?>"><br>
-           Perception =  <input id="perception"type="number" value="<?php echo $info_user->perc_user  ?>"><br>
-           Persuasion =  <input id="persuasion" type="number" value="<?php echo $info_user->persu_user  ?>"><br>
-           Soin =  <input id="soin" type="number" value="<?php echo $info_user->soin_user  ?>"><br>
-           Survie =  <input id="survie" type="number" value="<?php echo $info_user->survie_user  ?>"><br>
-      </p>
-   <h1 class="f-20">Combat</h1>
-   <p>
-           Initiative =  <input id="initiative" type="number" value="<?php echo $info_user->adr_user  ?>"> <br>
-           Bonus dégâts =  <input id="bonus_degats" disabled type="number" value="<?php echo $info_user->bonus_degats_user  ?>"> <br>
-
-
-      </p>
+       <div class="row">
+         <div class="col s12">
+           <button type="button btn red" name="button"> Attaquer </button>
+         </div>
+       </div>
      </div>
    </li>
 <?php   } ?>
  </ul>
 
   </div>
-  <div class="col s6">
+  <!-- <div class="col s6">
     <h1 class="white-text f-20">Ennemis</h1>
     <ul class="collapsible">
    <li>
@@ -71,7 +38,7 @@
    </li>
  </ul>
 
-  </div>
+  </div> -->
 </div>
 <script type="text/javascript">
 $('input').change(function()

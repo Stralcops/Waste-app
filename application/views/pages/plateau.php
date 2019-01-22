@@ -45,10 +45,12 @@
 </style>
 
 </div>
+
 <script type="text/javascript">
 
 $(document).ready(function()
 {
+$( ".draggable" ).offset({ top: 838, left: 820 });
 
 $( "#draggable" ).resizable({
     aspectRatio: 4 / 4
@@ -66,10 +68,32 @@ $( function() {
        var finalOffset = $(this).offset();
        var finalxPos = finalOffset.left;
        var finalyPos = finalOffset.top;
+
+         var data = {
+           posX_user: finalxPos,
+           posY_user: finalyPos
+         };
+         $.ajax({
+           url:'<?php echo base_url() ?>personnages/update_position',
+           data: data,
+           type: "POST",
+           success(result)
+           {
+             console.log(result);
+
+           },
+           error(result)
+           {
+             console.log(result);
+           }
+         });
+
+
    },
   });
 
 } );
+
 
 });
 

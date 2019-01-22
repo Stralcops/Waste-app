@@ -87,9 +87,27 @@ class Personnages extends CI_Controller {
              $this->db->where("user_id", $id_user);
              $this->db->update('t_pj', $data);
              // $this->db->delete("t_pj");
+           }
+           public function update_position()
+           {
+             $data = array(
+               "posX_user" => $this->input->post('posX_user'),
+               "posY_user" => $this->input->post('posY_user'),
+             );
+
+
+             $id_user ="27";
+             $this->db->select("*");
+             $this->db->where("user_id", $id_user);
+             $this->db->update('t_pj', $data);
+             // $this->db->delete("t_pj");
 
            }
-
+           public function contentArmes()
+           {
+             $data['id_user'] =  $_POST['id_user'];
+             $this->load->view('pages/contentArmes', $data);
+           }
 
 
 }
