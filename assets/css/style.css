@@ -41,6 +41,11 @@
 {
   width: 40px !important;
 }
+.card .categorie
+{
+  width: 100%;
+  background: #ffeadb;
+}
 /* .sante input {
   width: 60px !important;t
 } */

@@ -22,7 +22,12 @@
 {
   background-color: rgba(0, 0, 255, 0);
 }
-
+.separateur
+{
+  width: 100%;
+  height: 2px;
+  background-color: #F1F1F1;
+}
 .relative{
   position:relative;
 }

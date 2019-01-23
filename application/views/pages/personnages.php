@@ -21,6 +21,27 @@
         </tbody>
 
     </table>
+
+    <ul class="collapsible">
+      <?php
+          $query = $this->db->get('t_pnj');
+          $query_pnj = $query->result();
+          foreach ($query_pnj as $info_pnj) {
+          ?>
+          <li>
+            <div class="collapsible-header"><?php echo $info_pnj->nom_pnj ?></div>
+            <div class="collapsible-body">
+              <h1 class="f-20 f-600 m-0">Description :</h1>
+              <p><?php echo $info_pnj->desc_pnj ?></p><br>
+              <span class="w-100 right-align"><?php echo "Page n°".  $info_pnj->page_pnj." du livre " .  $info_pnj->livre_pnj?></span>
+            </div>
+          </li>
+          <?php
+          }
+       ?>
+    </ul>
+
+
 <script type="text/javascript">
   $(".modalFeuille").click(function()
 {

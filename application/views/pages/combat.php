@@ -40,6 +40,108 @@
 
   </div> -->
 </div>
+<div class="row container">
+  <div class="col s12">
+    <h1 class="white-text f-20">Ennemis</h1>
+    <ul class="collapsible">
+      <?php
+      $query = $this->db->get('t_mob');
+      $query_mob = $query->result();
+      foreach ($query_mob as $info_mob) {
+      ?>
+   <li>
+     <div class="collapsible-header"><?php echo $info_mob->nom_mob ?></div>
+     <div class="collapsible-body bg-0  ">
+       <div class="row">
+         <div class="col s12 center">
+          <div class="card left-align b-s">
+            <div class="col s12 categorie">
+              <span class="td-u ">Caractéristiques</span>
+            </div>
+            <div class="row m-0">
+              <div class="col s4">
+                <span>Adresse: <?php echo $info_mob->adr_mob?></span>
+              </div>
+              <div class="col s4">
+                <span>clairvoyance: <?php echo $info_mob->cla_mob?></span>
+              </div>
+              <div class="col s4">
+                <span>Présence: <?php echo $info_mob->pre_mob?></span>
+              </div>
+              <div class="col s4">
+                <span>Puissance: <?php echo $info_mob->pui_mob?></span>
+              </div>
+              <div class="col s4">
+                <span>Trempe: <?php echo $info_mob->tre_mob?></span>
+              </div>
+            </div>
+            <div class="row m-0">
+              <div class="col s12 ">
+                <span class="fs-i">Mêlée: <?php echo $info_mob->melee_mob?>, Mouvement: <?php  echo $info_mob->mouv_mob ?>, Perception: <?php  echo $info_mob->perc_mob ?></span>
+              </div>
+            </div>
+            <span class="separateur"></span>
+            <div class="row m-0">
+              <div class="col s12 categorie">
+                <span="td-u">Combat</span>
+              </div>
+              <div class="col s6">
+                <span>Vitesse: <?php echo $info_mob->vitesse_mob?></span>
+              </div>
+              <div class="col s6">
+                <span>Santé: <?php echo $info_mob->hp_mob?></span>
+              </div>
+              <div class="col s6">
+                <span>Initiative: </span>
+              </div>
+            </div>
+            <div class="row m-0">
+              <div class="col s6">
+                <span>Cap. off.: <?php echo $info_mob->cap_off_mob?></span>
+              </div>
+              <div class="col s6">
+                <span>Psyché: <?php echo $info_mob->psy_mob?></span>
+              </div>
+              <div class="col s6">
+                <span>Défense: <?php echo $info_mob->def_mob ?> </span>
+              </div>
+            </div>
+            <div class="row m-0">
+              <div class="col s12 categorie">
+                <span class="td_u">Attques</span>
+              </div>
+              <div class="col s12">
+                <p><?php echo $info_mob->attaque_mob ?></p>
+              </div>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
+   </li>
+<?php   } ?>
+ </ul>
+
+  </div>
+  <!-- <div class="col s6">
+    <h1 class="white-text f-20">Ennemis</h1>
+    <ul class="collapsible">
+   <li>
+     <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   </li>
+   <li>
+     <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+   </li>
+ </ul>
+
+  </div> -->
+</div>
 <script type="text/javascript">
 $('input').change(function()
 {
