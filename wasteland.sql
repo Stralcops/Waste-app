@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 22 jan. 2019 à 16:29
+-- Généré le :  mer. 23 jan. 2019 à 09:29
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `t_arme_user` (
   `user_id` int(11) NOT NULL,
   `arme_id` int(11) NOT NULL,
   PRIMARY KEY (`id_arme_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_arme_user`
@@ -118,7 +118,17 @@ CREATE TABLE IF NOT EXISTS `t_arme_user` (
 INSERT INTO `t_arme_user` (`id_arme_user`, `user_id`, `arme_id`) VALUES
 (1, 27, 6),
 (3, 27, 12),
-(4, 27, 2);
+(4, 27, 2),
+(5, 31, 2),
+(6, 29, 8),
+(7, 29, 5),
+(8, 29, 5),
+(9, 29, 2),
+(10, 8, 2),
+(11, 32, 6),
+(12, 32, 2),
+(13, 32, 8),
+(14, 32, 12);
 
 -- --------------------------------------------------------
 
@@ -196,23 +206,33 @@ CREATE TABLE IF NOT EXISTS `t_mob` (
   `chp_mob` int(11) NOT NULL,
   `psy_mob` int(11) NOT NULL,
   `cpsy_mob` int(11) NOT NULL,
+  `adr_mob` int(11) NOT NULL,
+  `cla_mob` int(11) NOT NULL,
+  `pre_mob` int(11) NOT NULL,
+  `pui_mob` int(11) NOT NULL,
+  `tre_mob` int(11) NOT NULL,
+  `melee_mob` int(11) NOT NULL,
+  `mouv_mob` int(11) NOT NULL,
+  `perc_mob` int(11) NOT NULL,
+  `coer_mob` int(11) NOT NULL,
+  `survie_mob` int(11) NOT NULL,
+  `vitesse_mob` int(11) NOT NULL,
+  `init_mob` int(11) NOT NULL,
+  `cap_off_mob` int(11) NOT NULL,
+  `def_mob` int(11) NOT NULL,
+  `attaque_mob` text NOT NULL,
   PRIMARY KEY (`mob_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_mob`
 --
 
-INSERT INTO `t_mob` (`mob_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_mob`) VALUES
-(13, 'decapode ', 12, 0, 0, 0),
-(14, 'decapode ', 12, 0, 0, 0),
-(12, 'decapode ', 12, 0, 0, 0),
-(11, 'decapode ', 12, 0, 0, 0),
-(15, 'decapode ', 12, 0, 0, 0),
-(16, 'decapode ', 12, 0, 0, 0),
-(17, 'decapode ', 12, 0, 0, 0),
-(18, 'decapode ', 12, 0, 0, 0),
-(23, 'Loup', 35, 0, 12, 0);
+INSERT INTO `t_mob` (`mob_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_mob`, `adr_mob`, `cla_mob`, `pre_mob`, `pui_mob`, `tre_mob`, `melee_mob`, `mouv_mob`, `perc_mob`, `coer_mob`, `survie_mob`, `vitesse_mob`, `init_mob`, `cap_off_mob`, `def_mob`, `attaque_mob`) VALUES
+(18, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et injection à la victime d\'un venin de virulence 10 .\r\nEffet létal : -1 hp par tour. Si hp <  9: : Vommissement (-2 malus). Si hp < 4 (-5 malus) + cloué à terre. CF page 157 livre base.'),
+(23, 'Loup', 35, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(24, 'Quantrill', 27, 27, 21, 21, 4, 3, 3, 6, 5, 5, 3, 2, 7, 3, 5, 0, 13, 16, 'Épée :  1d8+4.\r\n\r\nplus d\'info page 95 du Chemin des cendres.'),
+(25, 'Mercenaire', 23, 23, 19, 19, 4, 3, 2, 5, 4, 5, 2, 3, 2, 2, 5, 0, 12, 17, 'Épée : 1d6+3 ');
 
 -- --------------------------------------------------------
 
@@ -266,16 +286,42 @@ CREATE TABLE IF NOT EXISTS `t_pj` (
   `posX_user` float DEFAULT NULL,
   `posY_user` float DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_pj`
 --
 
 INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `peuple_user`, `sexe_user`, `origine_user`, `metier_user`, `heritage_user`, `ba_user`, `cba_user`, `eclat_user`, `exp_user`, `hp_user`, `chp_user`, `chpnl_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `bonus_vitesse_user`, `cap_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
-(27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 3, 1, 12, 57, 47, 47, 45, 33, 9, 6, 15, 9, 8, 11, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 6, 2, '', NULL, 830.381, 822.975),
-(29, 'Nicolas', 'Alwyn', 'Humain', 'Homme', 'London', 'Chevalier', 'Colosse', 5, 5, 1, 9, 29, 29, 29, 25, 25, 3, 0, 7, 5, 4, 8, 1, 0, 2, 1, 3, 3, 5, 4, 0, 2, 1, 0, 0, 0, 0, 0, NULL, 'https://i.pinimg.com/564x/8c/4c/0c/8c4c0c402df8ad7062cb5adc08528668.jpg', NULL, NULL),
-(30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 2, 2, 4, 3, 27, 27, 27, 25, 25, 6, 0, 5, 3, 8, 4, 0, 1, 2, 1, 1, 3, 1, 0, 2, 1, 0, 2, 0, 0, 1, 0, NULL, 'https://i.pinimg.com/564x/05/59/9d/05599d14442487aa01869ea31fce51ad.jpg', NULL, NULL);
+(27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 3, 1, 12, 45, 47, 47, 45, 33, 9, 6, 9, 9, 8, 11, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 3, 2, '', NULL, 607.5, 676),
+(31, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', NULL, NULL, NULL),
+(29, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 29, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', NULL, NULL, NULL),
+(30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', NULL, NULL, NULL),
+(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 31, 31, 31, 27, 27, 4, 0, 5, 3, 3, 8, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', NULL, NULL, NULL),
+(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 0, 0, 0, 0, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 1, 0, 1, 1, 2, 1, 1, 0, 0, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_pnj`
+--
+
+DROP TABLE IF EXISTS `t_pnj`;
+CREATE TABLE IF NOT EXISTS `t_pnj` (
+  `id_pnj` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_pnj` varchar(50) NOT NULL,
+  `desc_pnj` text NOT NULL,
+  `page_pnj` int(11) NOT NULL,
+  `livre_pnj` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_pnj`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_pnj`
+--
+
+INSERT INTO `t_pnj` (`id_pnj`, `nom_pnj`, `desc_pnj`, `page_pnj`, `livre_pnj`) VALUES
+(1, 'Gassac de Lambrefeux', 'Surnommé \"Le faible\", il est le compte de Lambrefeux. Il a 28 ans, et à le visage disgracieux. Malgré tout, il est un excellent négociateur et poursuit la tradition d\'accueil des voyageurs.', 236, 'de base');
 
 -- --------------------------------------------------------
 
