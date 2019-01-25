@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 23 jan. 2019 à 09:29
+-- Généré le :  ven. 25 jan. 2019 à 17:58
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `t_arme_user` (
   `user_id` int(11) NOT NULL,
   `arme_id` int(11) NOT NULL,
   PRIMARY KEY (`id_arme_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_arme_user`
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `t_arme_user` (
 INSERT INTO `t_arme_user` (`id_arme_user`, `user_id`, `arme_id`) VALUES
 (1, 27, 6),
 (3, 27, 12),
-(4, 27, 2),
+(21, 27, 1),
 (5, 31, 2),
 (6, 29, 8),
 (7, 29, 5),
@@ -128,7 +128,10 @@ INSERT INTO `t_arme_user` (`id_arme_user`, `user_id`, `arme_id`) VALUES
 (11, 32, 6),
 (12, 32, 2),
 (13, 32, 8),
-(14, 32, 12);
+(14, 32, 12),
+(15, 27, 40),
+(17, 27, 41),
+(18, 27, 16);
 
 -- --------------------------------------------------------
 
@@ -148,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `t_armure` (
   `typedeg_armure` int(11) NOT NULL,
   `typededegat_armure` int(11) NOT NULL,
   PRIMARY KEY (`armure_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_armure`
@@ -190,7 +193,30 @@ INSERT INTO `t_armure` (`armure_id`, `nom_armure`, `protec_armure`, `rar_armure`
 (33, 'Harnois', 5, 10, 50, NULL, NULL, 0, 0),
 (35, 'Rondache', 0, 4, 2, 1, 1, 4, 0),
 (36, 'Bouclier haïsrandher', 0, 5, 2, 2, 1, 6, 0),
-(37, 'Ecu ', 0, 9, 10, 3, 1, 6, 0);
+(37, 'Ecu ', 0, 9, 10, 3, 1, 6, 0),
+(38, 'Ecu', 3, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_armure_user`
+--
+
+DROP TABLE IF EXISTS `t_armure_user`;
+CREATE TABLE IF NOT EXISTS `t_armure_user` (
+  `id_armure_user` int(11) NOT NULL AUTO_INCREMENT,
+  `armure_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_armure_user`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_armure_user`
+--
+
+INSERT INTO `t_armure_user` (`id_armure_user`, `armure_id`, `user_id`) VALUES
+(1, 38, 32),
+(2, 4, 27);
 
 -- --------------------------------------------------------
 
@@ -293,12 +319,12 @@ CREATE TABLE IF NOT EXISTS `t_pj` (
 --
 
 INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `peuple_user`, `sexe_user`, `origine_user`, `metier_user`, `heritage_user`, `ba_user`, `cba_user`, `eclat_user`, `exp_user`, `hp_user`, `chp_user`, `chpnl_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `bonus_vitesse_user`, `cap_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
-(27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 3, 1, 12, 45, 47, 47, 45, 33, 9, 6, 9, 9, 8, 11, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 3, 2, '', NULL, 607.5, 676),
+(27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 4, 1, 12, 33, 31, 47, 31, 33, 9, 6, 10, 9, 8, 4, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 4, 2, '', NULL, 321.875, 570),
 (31, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', NULL, NULL, NULL),
 (29, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 29, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', NULL, NULL, NULL),
 (30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', NULL, NULL, NULL),
-(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 31, 31, 31, 27, 27, 4, 0, 5, 3, 3, 8, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', NULL, NULL, NULL),
-(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 0, 0, 0, 0, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 1, 0, 1, 1, 2, 1, 1, 0, 0, NULL, NULL, NULL, NULL);
+(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 33, 31, 31, 29, 27, 4, 0, 5, 3, 3, 9, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', NULL, NULL, NULL),
+(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 23, 0, 0, 25, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0, 1, '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
