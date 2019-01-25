@@ -88,6 +88,11 @@ class Personnages extends CI_Controller {
              $this->db->update('t_pj', $data);
              // $this->db->delete("t_pj");
            }
+
+
+
+
+
            public function update_position()
            {
              $data = array(

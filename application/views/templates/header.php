@@ -22,11 +22,19 @@
 
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
      <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    window.wasteConfig = {
+      baseUrl: "<?php echo base_url(); ?>",
+    };
+  </script>
+  <script type="text/javascript" src="<?php echo base_url() ?>assets/js/calc.js">
 
+  </script>
      <!--Let browser know website is optimized for mobile-->
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    </head>
