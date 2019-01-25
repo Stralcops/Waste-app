@@ -90,7 +90,10 @@ class Personnages extends CI_Controller {
            }
 
 
-
+           public function ajoutArme()
+           {
+             $this->load->view('pages/ajoutArme');
+           }
 
 
            public function update_position()

@@ -240,6 +240,7 @@
                         <td class="def_user"></td>
                         <td class=""><?php echo $info_arme->nbde_arme ?>D<?php echo $info_arme->typede_arme  ?>+<?php echo $info_arme->bonusde_arme ?> </td>
                       </tr>
+
                       <script type="text/javascript">
                       $(document).ready(function()
                     {
@@ -252,7 +253,7 @@
                       {
                         var  protect = $("#value_protect").text();
 
-
+                        $('.modal2').modal();
 
                         var cap_off_user =parseInt(puissance_user) + parseInt(melee_user) + parseInt(bonus_degats_arme);
                         var def_user = parseInt(tre_user)  + parseInt(melee_user) + 5 + parseInt(bonus_def_arme) + parseInt(protect);
@@ -275,6 +276,18 @@
                  ?>
 
               </table>
+              <div class="col s12">
+                 <button id="loadModal" class="btn blue">Ajouter une arme</button>
+              </div>
+
+              <script type="text/javascript">
+              $('#loadModal').click(function()
+            {
+              $('#modal1').load( wasteConfig.baseUrl + "personnages/ajoutArme");
+              
+            })
+              </script>
+
 
           </div>
         <div class="col s12">
