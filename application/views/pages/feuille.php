@@ -259,34 +259,37 @@
                         var def_user = parseInt(tre_user)  + parseInt(melee_user) + 5 + parseInt(bonus_def_arme) + parseInt(protect);
                         $('#trArme'+row+' .cap_off_user').html(cap_off_user);
                         $('#trArme'+row+' .def_user').html(def_user);
-
                       }
-
-
-
-
                     });
-
                       </script>
                       <?php
                     }
-
                     $i++;
                 }
                  ?>
-
+                 <tr>
+                   <td>
+                    <select class="" name="">
+                      <option value="1">TESDT</option>
+                    </select>
+                   </td>
+                 </tr>
               </table>
-              <div class="col s12">
-                 <button id="loadModal" class="btn blue">Ajouter une arme</button>
+              <!-- <div class="col s12">
+                 <button id="loadModal" class=" center transparent black-text m-10 b-s valign-wrapper">Ajouter une arme</button>
               </div>
 
               <script type="text/javascript">
               $('#loadModal').click(function()
             {
-              $('#modal1').load( wasteConfig.baseUrl + "personnages/ajoutArme");
-              
+              var user_id = $("#user_id").val();
+              console.log('user id ='+ user_id);
+              $('#modal1').load( wasteConfig.baseUrl + "personnages/ajoutArme", {
+                  user_id : user_id,
+              });
+
             })
-              </script>
+              </script> -->
 
 
           </div>
