@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 25 jan. 2019 à 17:58
+-- Généré le :  sam. 16 mars 2019 à 01:24
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -221,6 +221,29 @@ INSERT INTO `t_armure_user` (`id_armure_user`, `armure_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `t_attaque`
+--
+
+DROP TABLE IF EXISTS `t_attaque`;
+CREATE TABLE IF NOT EXISTS `t_attaque` (
+  `id_attaque` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_attaque` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_attaque`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_attaque`
+--
+
+INSERT INTO `t_attaque` (`id_attaque`, `nom_attaque`) VALUES
+(1, 'Assaut'),
+(2, 'Feinte'),
+(3, 'Coup bas'),
+(4, 'Attaque précise');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `t_mob`
 --
 
@@ -255,8 +278,8 @@ CREATE TABLE IF NOT EXISTS `t_mob` (
 --
 
 INSERT INTO `t_mob` (`mob_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_mob`, `adr_mob`, `cla_mob`, `pre_mob`, `pui_mob`, `tre_mob`, `melee_mob`, `mouv_mob`, `perc_mob`, `coer_mob`, `survie_mob`, `vitesse_mob`, `init_mob`, `cap_off_mob`, `def_mob`, `attaque_mob`) VALUES
-(18, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et injection à la victime d\'un venin de virulence 10 .\r\nEffet létal : -1 hp par tour. Si hp <  9: : Vommissement (-2 malus). Si hp < 4 (-5 malus) + cloué à terre. CF page 157 livre base.'),
-(23, 'Loup', 35, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(18, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.'),
+(23, 'Loup', 35, 35, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
 (24, 'Quantrill', 27, 27, 21, 21, 4, 3, 3, 6, 5, 5, 3, 2, 7, 3, 5, 0, 13, 16, 'Épée :  1d8+4.\r\n\r\nplus d\'info page 95 du Chemin des cendres.'),
 (25, 'Mercenaire', 23, 23, 19, 19, 4, 3, 2, 5, 4, 5, 2, 3, 2, 2, 5, 0, 12, 17, 'Épée : 1d6+3 ');
 
@@ -320,11 +343,11 @@ CREATE TABLE IF NOT EXISTS `t_pj` (
 
 INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `peuple_user`, `sexe_user`, `origine_user`, `metier_user`, `heritage_user`, `ba_user`, `cba_user`, `eclat_user`, `exp_user`, `hp_user`, `chp_user`, `chpnl_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `bonus_vitesse_user`, `cap_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
 (27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 4, 1, 12, 33, 31, 47, 31, 33, 9, 6, 10, 9, 8, 4, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 4, 2, '', NULL, 321.875, 570),
-(31, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', NULL, NULL, NULL),
-(29, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 29, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', NULL, NULL, NULL),
-(30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', NULL, NULL, NULL),
-(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 33, 31, 31, 29, 27, 4, 0, 5, 3, 3, 9, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', NULL, NULL, NULL),
-(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 23, 0, 0, 25, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0, 1, '', NULL, NULL, NULL);
+(31, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', 'assets/img/raphael.png', NULL, NULL),
+(29, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 35, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', 'assets/img/alwyn.jpg', NULL, NULL),
+(30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', 'assets/img/maelwynn.jpg', NULL, NULL),
+(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 33, 24, 31, 29, 27, 4, 0, 5, 3, 3, 9, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', 'assets/img/xacthu.jpg', NULL, NULL),
+(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 23, 23, 23, 25, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0, 1, '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

@@ -21,9 +21,16 @@ class Pages extends CI_Controller {
 
            public function view($page = 'home')
            {
-             $this->load->view('templates/header', $page);
-             $this->load->view('pages/'.$page);
-             $this->load->view('templates/footer');
+             $this->db->where("user_id !=", 27);
+             $query = $this->db->get('t_pj');
+             $data['pj'] = $query->result();
+
+             $query = $this->db->get('t_mob');
+             $data['mob'] = $query->result();
+
+             $this->load->view('templates/header', $page, $data);
+             $this->load->view('pages/'.$page, $data);
+             $this->load->view('templates/footer', $data);
            }
 
 }

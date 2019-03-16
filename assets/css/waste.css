@@ -1,0 +1,781 @@
+@import "style.css";
+/* functions */
+@font-face {
+  font-family: 'NofretRegular';
+  src: url('font/nofret_regular-webfont.eot');
+  src: url('font/nofret_regular-webfont.eot?#iefix') format('embedded-opentype'), url('font/nofret_regular-webfont.woff') format('woff'), url('font/nofret_regular-webfont.ttf') format('truetype'), url('font/nofret_regular-webfont.svg#NofretRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*--------------------------------------------
+					COMMUN
+-------------------------------------------- */
+/* ----------------------[BODY]---------------------- */
+body {
+  background: #000000 url(../img/bg-global-repeat.jpg) repeat-y 50% 0%;
+  background-color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 990px;
+  /* ----------------------[#SLIDE]---------------------- */
+
+}
+body .h1 {
+  background: url(../img/bg-titre-nav.jpg) no-repeat 50% 0%;
+  height: 148px;
+}
+body > header {
+  background: url(../img/bg-global-top.jpg) no-repeat 50% 0%;
+  height: 882px;
+  margin-bottom: -369px;
+}
+body > header nav {
+  background: url(../img/bg-titre-nav.jpg) no-repeat 50% 100%;
+  height: 154px;
+}
+body > header nav ul {
+  width: 920px;
+  margin: auto;
+  padding-top: 75px;
+}
+body > header nav ul li {
+  float: left;
+  list-style: none;
+  font-family: 'NofretRegular', georgia, arial, serif;
+  border-right: 1px solid #444;
+  padding: 0 2em;
+}
+body > header nav ul li:last-child {
+  border-right: 0px;
+}
+body > header nav ul li a,
+body > header nav ul li a:active,
+body > header nav ul li a:visited {
+  color: #333!important;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+body > header nav ul li a:hover,
+body > header nav ul li a:active:hover,
+body > header nav ul li a:visited:hover {
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+}
+body #slide {
+  height: 213px;
+  position: relative;
+  overflow: hidden;
+}
+body #slide h3 {
+  background: url(../img/cadre-inner-top-net.png) no-repeat 50% 0;
+  height: 28px;
+  position: absolute;
+  width: 100%;
+}
+body #slide .img {
+  width: 940px;
+  padding-left: 10px;
+  height: 215px;
+  margin: auto;
+  overflow: hidden;
+}
+body #slide .img li {
+  float: left;
+  width: 940px;
+  list-style: none;
+  overflow: hidden;
+}
+body #slide .left,
+body #slide .right {
+  height: 213px;
+  margin-left: 50%;
+  position: absolute;
+}
+body #slide .left {
+  width: 137px;
+  left: -581px;
+  background: url(../img/bg-bords-slide.jpg) no-repeat -111px 0;
+}
+body #slide .left a {
+  background: url(../img/slide-inner.png) no-repeat scroll 38px 100% transparent;
+  display: block;
+  float: right;
+  height: 82px;
+  padding-bottom: 71px;
+  padding-top: 60px;
+  width: 60px;
+}
+body #slide .right {
+  width: 126px;
+  left: 455px;
+  background: url(../img/bg-bords-slide.jpg) no-repeat 16px 0;
+}
+body #slide .right a {
+  background: url(../img/slide-inner.png) no-repeat -4px 0 transparent;
+  display: block;
+  float: left;
+  height: 82px;
+  padding-bottom: 71px;
+  padding-top: 60px;
+  width: 60px;
+}
+/* ----------------------[ARTICLE]---------------------- */
+article {
+  width: 778px;
+  min-height: 660px;
+  margin: auto;
+  padding: 0px 79px 30px;
+  position: relative;
+  background: #dcddcf url(../img/bg-article-bot.jpg) no-repeat 50% 100%;
+}
+article header {
+  margin: 0 -79px;
+  min-height: 295px;
+  background: #dcddcf url(../img/bg-article.jpg) no-repeat 50% 0;
+}
+article aside {
+  float: left;
+  width: 300px;
+  min-height: 300px;
+  margin-top: -260px;
+}
+article section {
+  margin: -260px 0 20px 20px;
+  /* width: 458px; */
+  float: left;
+}
+article section p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+article footer {
+  clear: both;
+}
+/* ----------------------[ARIANE]---------------------- */
+.ie7 article nav > ul > li > ul li,
+.ie7 article nav > ul > li > ul a {
+  position: absolute;
+}
+nav#ariane {
+  position: absolute;
+  left: 80px;
+  margin-top: 0px;
+  z-index: 1;
+  width: 780px;
+  font-size: 10px;
+  line-height: 12px;
+  font-style: italic;
+  overflow: hidden;
+}
+nav#ariane a,
+nav#ariane a:active,
+nav#ariane a:visited {
+  padding: 4px 4px 4px 2px;
+  display: block;
+  text-decoration: none;
+  color: #DCDDCF;
+  background: #7A796D;
+  background: rgba(0, 0, 0, 0.4);
+  margin-right: 2px;
+  white-space: nowrap;
+  -webkit-transition-property: color,background;
+  -moz-transition-property: color,background;
+  -o-transition-property: color,background;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+nav#ariane a:hover {
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.7);
+}
+nav#ariane > ul > li:first-child > a {
+  padding-left: 4px;
+}
+nav#ariane > ul > li {
+  float: left;
+  top: 0px;
+}
+nav#ariane > ul > li > a {
+  float: left;
+}
+nav#ariane > ul > li > ul {
+  float: left;
+}
+nav#ariane > ul > li > ul:hover li {
+  visibility: visible;
+  height: auto;
+  position: static;
+}
+nav#ariane > ul > li > ul:hover li.selected {
+  height: auto;
+  position: static!important;
+}
+nav#ariane > ul > li > ul:hover li.selected a {
+  position: static!important;
+}
+nav#ariane > ul > li > ul:hover li.selected a:after {
+  display: none;
+  margin: 0;
+}
+nav#ariane > ul > li > ul:hover a {
+  visibility: visible;
+  height: auto;
+  padding: 4px 4px 4px 2px;
+  position: static;
+}
+nav#ariane > ul > li > ul li,
+nav#ariane > ul > li > ul a {
+  visibility: hidden;
+  height: 0px;
+  padding: 0;
+}
+nav#ariane > ul > li > ul li.selected {
+  visibility: visible;
+  position: relative;
+  height: 30px;
+}
+nav#ariane > ul > li > ul li.selected a {
+  visibility: visible;
+  height: auto;
+  padding: 4px 4px 4px 2px;
+}
+nav#ariane > ul > li > ul li.selected a:after {
+  border-color: rgba(0, 0, 0, 0.4) transparent transparent;
+  border-style: solid;
+  border-width: 5px;
+  content: " ";
+  height: 0;
+  width: 0;
+  display: block;
+  position: absolute;
+  margin: 4px 0 0 -5px;
+  left: 50%;
+}
+/* ----------------------[FOOTER]---------------------- */
+body > footer {
+  background: url(../img/bg-global-bot.jpg) no-repeat 50% 100%;
+  height: 207px;
+  margin-top: -296px;
+  padding-top: 300px;
+  text-align: center;
+}
+body > footer #logo-dsp {
+  margin: auto;
+  display: block;
+}
+body > footer a,
+body > footer a:active,
+body > footer a:visited,
+body > footer a:hover {
+  color: #fff;
+}
+/*--------------------------------------------
+					VOYAGEURS
+-------------------------------------------- */
+/* ----------------------[ARTICLE]---------------------- */
+article#voyageur {
+  /* ----------------------[ASIDE]---------------------- */
+
+  /* ----------------------[SECTION]---------------------- */
+
+}
+article#voyageur h2 {
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 32px;
+  line-height: 49px;
+  border-bottom: 1px solid #444;
+  margin: 0 0 25px 0px;
+  text-shadow: 1px 1px 0 #f2f2ed;
+}
+article#voyageur aside {
+  /* ----------------------[FIGURE]---------------------- */
+
+  /* ----------------------[BLOCKQUOTE]---------------------- */
+
+}
+article#voyageur aside figure {
+  width: 300px;
+  height: 240px;
+  background: url(../img/cadre.png) no-repeat -5px -5px;
+  position: relative;
+  -moz-box-shadow: 0px 0px 4px #000000;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0px 0px 4px #000000;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0px 0px 4px #000000;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+}
+article#voyageur aside figure:before {
+  content: "";
+  width: 240px;
+  height: 240px;
+  margin: 0 31px;
+  display: block;
+  background: url(../img/fond-cadre.png) no-repeat 0 31px;
+  position: absolute;
+}
+article#voyageur aside figure img {
+  margin: 11px 31px 31px 31px;
+  clip: rect(20px 240px 200px 0px);
+  position: absolute;
+}
+article#voyageur aside figure figcaption {
+  position: absolute;
+  bottom: 29px;
+  left: 31px;
+  width: 230px;
+  padding: 5px;
+  background: #000;
+  opacity: 0;
+  color: #FFF;
+  font-family: 'NofretRegular', georgia, arial, serif;
+  text-align: center;
+  font-style: italic;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+article#voyageur aside figure:hover figcaption {
+  opacity: .5;
+}
+article#voyageur aside blockquote {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 24px;
+  color: #523C14;
+  width: 300px;
+  text-shadow: 1px 1px 0 #f2f2ed;
+  margin-top: 48px;
+  font-family: 'NofretRegular', georgia, arial, serif;
+  text-align: center;
+}
+article#voyageur aside blockquote:before {
+  content: "“";
+  font-size: 52px;
+  letter-spacing: 10px;
+  font-weight: bold;
+  position: absolute;
+  left: 50px;
+}
+article#voyageur section p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+article#voyageur section p:first-child article#voyageur section p:first-letter {
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-weight: bold;
+}
+article#voyageur section p.small {
+  font-size: 11px;
+  line-height: 14px;
+}
+article#voyageur section h3 {
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 12px;
+  line-height: 14px;
+  border-bottom: 1px solid #444;
+  margin: 0 0 4px 0px;
+  text-shadow: 1px 1px 0 #f2f2ed;
+}
+article#voyageur section img {
+  width: 140px;
+  float: left;
+  -moz-box-shadow: 0 0 4px #a6a884;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0 0 4px #a6a884;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0 0 4px #a6a884;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+}
+article#voyageur section img + p {
+  float: left;
+  width: 298px;
+  margin: 0 0px 0 20px;
+}
+/* ----------------------[NEWS]---------------------- */
+#news h3 {
+  background: url(../img/bg-bois-horiz.jpg) no-repeat 0 0;
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  color: #f2f2ed;
+  padding: 4px;
+}
+#news ul {
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.6);
+  background: #d1d2c0;
+  padding: 8px;
+}
+#news ul li {
+  list-style: none;
+  font-size: 12px;
+  line-height: 24px;
+  background: url(../img/bg-sable.jpg) repeat;
+  -moz-box-shadow: 0 0 4px #9b9e75;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0 0 4px #9b9e75;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0 0 4px #9b9e75;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+  margin: 10px 0;
+  -moz-border-radius: 8px;
+  /* FF1+ */
+
+  -webkit-border-radius: 8px;
+  /* Saf3-4, iOS 1+, Android 1.5+ */
+
+  border-radius: 8px;
+  /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+
+  padding: 8px;
+}
+#news ul li:first-child {
+  margin-top: 0px;
+}
+#news ul li span {
+  font-size: 10px;
+  font-style: italic;
+  display: block;
+  text-align: right;
+}
+/* ----------------------[FICHE]---------------------- */
+.fiche {
+  border-collapse: collapse;
+  background: #e7e8de;
+  margin-top: 24px;
+  width: 300px;
+  -moz-box-shadow: 0 0 4px #a6a884;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0 0 4px #a6a884;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0 0 4px #a6a884;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+}
+.fiche h3 {
+  background: url(../img/bg-bois-horiz.jpg) no-repeat 0 0;
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  color: #f2f2ed;
+  padding: 4px;
+}
+.fiche td {
+  padding-left: 20px!important;
+  width: 130px!important;
+  margin-left: 2px;
+}
+.fiche th {
+  margin-left: 2px;
+}
+.fiche th,
+.fiche td {
+  text-align: left;
+  font-weight: normal;
+  border-left: 2px solid #E7E8DE;
+  width: 126px;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 3px 5px;
+  vertical-align: top;
+}
+.fiche tr:nth-child(even) td,
+.fiche tr:nth-child(even) th {
+  background: #f2f2ed;
+}
+.fiche abr {
+  font-variant: small-caps;
+}
+/*--------------------------------------------
+				VOYAGEURS HOME
+-------------------------------------------- */
+/* ----------------------[ARTICLE]---------------------- */
+article#voyageur-home section {
+  width: 780px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #b0b393;
+}
+article#voyageur-home section ul {
+  border-right: 1px solid #b0b393;
+  border-left: 1px solid #b0b393;
+  margin: 0px;
+}
+article#voyageur-home section ul li {
+  position: relative;
+  background: url(../img/bg-bois-horiz.jpg) repeat-x 0 -1px;
+  padding-top: 32px;
+  max-height: 112px;
+  overflow: hidden;
+  list-style: none;
+  border-right: 1px solid #f2f2ed;
+  border-left: 1px solid #f2f2ed;
+  -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.4);
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.4);
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.4);
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+  -webkit-transition-property: max-height;
+  -moz-transition-property: max-height;
+  -o-transition-property: max-height;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -webkit-transition-timing-function: 'ease';
+  -moz-transition-timing-function: 'ease';
+  -o-transition-timing-function: 'ease';
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+article#voyageur-home section ul li a {
+  color: #444;
+  text-decoration: none;
+}
+article#voyageur-home section ul li:last-child {
+  border-bottom: 1px solid #f2f2ed;
+}
+article#voyageur-home section ul li:hover {
+  max-height: 270px;
+}
+article#voyageur-home section ul li:hover h3 {
+  margin-top: 100px;
+}
+article#voyageur-home section ul li:hover h3:after {
+  background-position: 0 -26px;
+}
+article#voyageur-home section ul li img {
+  float: left;
+}
+article#voyageur-home section ul li h3 {
+  -webkit-transition-property: margin-top;
+  -moz-transition-property: margin-top;
+  -o-transition-property: margin-top;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -webkit-transition-timing-function: 'ease';
+  -moz-transition-timing-function: 'ease';
+  -o-transition-timing-function: 'ease';
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  float: left;
+  width: 496px;
+  font-size: 40px;
+  margin-left: 40px;
+  padding-top: 12px;
+  line-height: 32px;
+  font-family: 'NofretRegular', georgia, arial, serif;
+}
+article#voyageur-home section ul li h3:after {
+  content: " ";
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: url(../img/puce-toggle.png);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+article#voyageur-home section ul li p {
+  margin-left: 280px;
+  line-height: 32px;
+}
+article#voyageur-home section ul li p small {
+  text-decoration: underline;
+}
+/*--------------------------------------------
+				MONDE
+-------------------------------------------- */
+article#monde #carte-monde {
+  background: url(../img/bg-carte-shadow.png) no-repeat 0 0;
+  padding: 18px 28px 16px 31px;
+  margin: -260px -55px 30px;
+  width: 850px;
+}
+article#monde #carte-monde:before {
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+  position: absolute;
+  margin: 30px 0 0 30px;
+  background: url(../img/carte-deco-inner.png) no-repeat 0 0;
+}
+article#monde #carte-monde > figure {
+  background: url(../img/carte-fond.jpg) no-repeat 0 0;
+  width: 764px;
+  height: 575px;
+  padding: 30px 30px 30px 30px;
+  overflow: hidden;
+}
+article#monde #carte-monde > figure:before {
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 100px;
+  z-index: 3;
+  position: absolute;
+  margin: 476px 0 0 664px;
+  background: url(../img/carte-deco-inner.png) no-repeat 100% 100%;
+}
+article#monde #carte-monde > figure .overlay-layer {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  box-shadow: inset 0px 0px 5px #000,inset 0px 0px 10px #000;
+  cursor: pointer;
+}
+article#monde section {
+  margin: 0 0 0 0;
+  width: 100%;
+  float: none;
+}
+article#monde section h3 {
+  width: 120px;
+  padding: 4px 5px;
+  margin: 1px 0;
+  font-family: 'NofretRegular', georgia, arial, serif;
+}
+article#monde section h3 a {
+  color: #444;
+  text-decoration: none;
+}
+article#monde section p {
+  width: 618px;
+  float: right;
+  text-indent: 20px;
+}
+article#monde section p img {
+  float: left;
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  -moz-box-shadow: 0px 0px 4px #000000;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0px 0px 4px #000000;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0px 0px 4px #000000;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+}
+article#monde section.toggle-off p {
+  display: none;
+}
+article#monde section.toggle-on p {
+  display: block;
+}
+/*--------------------------------------------
+				TELECHARGEMENTS
+-------------------------------------------- */
+article#telechargement section ul {
+  margin-left: 0px;
+  width: 780px;
+}
+article#telechargement section ul li {
+  display: block;
+  list-style: none;
+  float: left;
+  margin-left: 105px;
+  width: 250px;
+}
+article#telechargement section ul li h3 {
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 16px;
+}
+article#telechargement section ul li img {
+  border: 1px solid #fff;
+}
+/*--------------------------------------------
+				HOME
+-------------------------------------------- */
+article#home section {
+  font-family: 'NofretRegular', georgia, arial, serif;
+}
+/*--------------------------------------------
+				CONTACT
+-------------------------------------------- */
+article#contact h2 {
+  font-family: 'NofretRegular', georgia, arial, serif;
+  font-size: 32px;
+  line-height: 49px;
+  border-bottom: 1px solid #444;
+  margin: 0 0 25px 0px;
+  text-shadow: 1px 1px 0 #f2f2ed;
+}
+article#contact aside img {
+  -moz-box-shadow: 0px 0px 4px #000000;
+  /* FF3.5+ */
+
+  -webkit-box-shadow: 0px 0px 4px #000000;
+  /* Saf3.0+, Chrome */
+
+  box-shadow: 0px 0px 4px #000000;
+  /* Opera 10.5, IE9, Chrome 10+ */
+
+}
+article#contact section input,
+article#contact section textarea {
+  border: 1px solid #a6a884;
+  display: block;
+  width: 300px;
+  line-height: 16px;
+  -moz-border-radius: 8px;
+  /* FF1+ */
+
+  -webkit-border-radius: 8px;
+  /* Saf3-4, iOS 1+, Android 1.5+ */
+
+  border-radius: 8px;
+  /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+
+  padding: 12px;
+  margin: 6px;
+}

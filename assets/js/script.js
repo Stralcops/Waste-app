@@ -2,16 +2,26 @@
 
 $(document).ready(function()
 {
-
+  // $( function() {
+  //  $( ".draggable" ).draggable();
+  //  $( ".droppable" ).droppable({
+  //    drop: function( event, ui ) {
+  //
+  //
+  //      $("#modal1").modal();
+  //
+  //    }
+  //  });
+  // } );
   // CALCUL INITIATIVE
 
 
   // ++++++++++++++++++++++++++++++
 
-  M.AutoInit();
-
-  $('.draggable').draggable();
-  $('.sortable').sortable();
+  // M.AutoInit();
+  //
+  // $('.draggable').draggable();
+  // $('.sortable').sortable();
     $('.dataTable').DataTable({
 
         "language": {
