@@ -71,6 +71,7 @@ class Pages extends CI_Controller {
            						'nom_user' => $result_login["nom_user"],
            						'user_id' => $result_login["user_id"],
            						'connect' => "true",
+           						'statut_user' => $result_login["statut_user"],
            					);
            					$this->session->set_userdata('log_utilisateur', $session_data);
            					$data['log_utilisateur'] = $this->session->userdata('log_utilisateur');

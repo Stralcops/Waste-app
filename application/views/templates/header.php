@@ -20,7 +20,7 @@ $log_utilisateur = $this->session->userdata('log_utilisateur');
 
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/waste.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/global.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 
 
 

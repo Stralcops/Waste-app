@@ -105,14 +105,12 @@ $( function() {
   $( ".draggable" ).draggable({revert: "valid",});
   $( ".droppable" ).droppable({
     drop: function( event, ui ) {
-      // $('.draggable').css('display', 'none');
-      // var id_joueur = $(this).attr('data-id');
 
       $('#modal1').modal();
-      $('#modal1').load('<?php echo base_url() ?>combats/modal_attaque', {
-        id_select_user : ui.draggable.attr('data-id'),
-        id_select_mob:$(this).attr('data-id'),
-      });
+      // $('#modal1').load('<?php echo base_url() ?>combats/modal_attaque', {
+      //   id_select_user : ui.draggable.attr('data-id'),
+      //   id_select_mob:$(this).attr('data-id'),
+      // });
       $('.blocker').css('z-index', "99999")
 
     }

@@ -2,7 +2,15 @@
 {
   border: solid 3px;
 }
-
+.liste_competences tr{
+  border: solid 2px;
+}
+.liste_competences td,.liste_competences th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 .blockers
 {

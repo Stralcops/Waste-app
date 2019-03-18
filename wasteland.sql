@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 16 mars 2019 à 01:24
+-- Généré le :  lun. 18 mars 2019 à 17:30
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -291,7 +291,8 @@ INSERT INTO `t_mob` (`mob_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_
 
 DROP TABLE IF EXISTS `t_pj`;
 CREATE TABLE IF NOT EXISTS `t_pj` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pj_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `joueur_user` varchar(60) DEFAULT NULL,
   `nom_user` varchar(60) DEFAULT NULL,
   `peuple_user` varchar(60) DEFAULT NULL,
@@ -334,20 +335,20 @@ CREATE TABLE IF NOT EXISTS `t_pj` (
   `photo_pj` text,
   `posX_user` float DEFAULT NULL,
   `posY_user` float DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`pj_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_pj`
 --
 
-INSERT INTO `t_pj` (`user_id`, `joueur_user`, `nom_user`, `peuple_user`, `sexe_user`, `origine_user`, `metier_user`, `heritage_user`, `ba_user`, `cba_user`, `eclat_user`, `exp_user`, `hp_user`, `chp_user`, `chpnl_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `bonus_vitesse_user`, `cap_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
-(27, 'Gwendoline', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 4, 1, 12, 33, 31, 47, 31, 33, 9, 6, 10, 9, 8, 4, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 4, 2, '', NULL, 321.875, 570),
-(31, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', 'assets/img/raphael.png', NULL, NULL),
-(29, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 35, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', 'assets/img/alwyn.jpg', NULL, NULL),
-(30, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', 'assets/img/maelwynn.jpg', NULL, NULL),
-(32, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 33, 24, 31, 29, 27, 4, 0, 5, 3, 3, 9, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', 'assets/img/xacthu.jpg', NULL, NULL),
-(33, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 23, 23, 23, 25, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0, 1, '', NULL, NULL, NULL);
+INSERT INTO `t_pj` (`pj_id`, `user_id`, `joueur_user`, `nom_user`, `peuple_user`, `sexe_user`, `origine_user`, `metier_user`, `heritage_user`, `ba_user`, `cba_user`, `eclat_user`, `exp_user`, `hp_user`, `chp_user`, `chpnl_user`, `psy_user`, `cpsy_user`, `adr_user`, `armure_user`, `pui_user`, `cla_user`, `pre_user`, `tre_user`, `armesdis_user`, `coer_user`, `com_user`, `dis_user`, `filou_user`, `melee_user`, `monte_user`, `mouv_user`, `nage_user`, `navig_user`, `perc_user`, `persu_user`, `soin_user`, `survie_user`, `bonus_degats_user`, `bonus_vitesse_user`, `cap_user`, `photo_pj`, `posX_user`, `posY_user`) VALUES
+(27, 1, 'Antoine', 'Hilda', 'Humain', 'Femme', 'Estbourn', 'Scondrel', 'Mutant', 4, 4, 1, 12, 33, 31, 47, 31, 33, 9, 6, 10, 9, 8, 4, 1, 6, 1, 3, 1, 5, 1, 0, 1, 3, 2, 1, 1, 1, 4, 2, '', 'https://pbs.twimg.com/media/DwvXQ4hX0AAwekK.jpg:large', 321.875, 570),
+(31, 0, 'Pierre', 'Raphaël ', 'Humain', 'Homme', 'Plymounth', 'Fureteur', 'Commun', 7, 7, 3, 0, 21, 21, 21, 25, 25, 8, 0, 3, 5, 4, 5, 6, 0, 1, 2, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, -1, 1, '', 'assets/img/raphael.png', NULL, NULL),
+(29, 0, 'Nicolas', 'Alwyn Fersombre', 'Humain', 'Homme', 'London', 'Juste errance', 'Colosse', 4, 4, 3, 6, 35, 35, 29, 29, 25, 3, 0, 8, 5, 5, 7, 0, 1, 2, 1, 0, 3, 2, 0, 1, 1, 3, 3, 1, 2, 3, -1, 'Bonus BA doublé si acte sacrificiel ', 'assets/img/alwyn.jpg', NULL, NULL),
+(30, 0, 'Jean', 'Maelwynn', 'Humain', 'Femme', 'London', 'Saltimbanque', 'Bonne étoile', 4, 4, 0, 0, 29, 27, 27, 27, 25, 4, 0, 6, 5, 8, 6, 0, 2, 2, 1, 1, 4, 1, 0, 1, 1, 2, 4, 2, 1, 2, 0, 'Bonus de Bonne aventure doublé pendant les representations', 'assets/img/maelwynn.jpg', NULL, NULL),
+(32, 2, 'Matthieu', 'Xac\'thu Cuauhma', 'Scrounger', 'Mâle', 'Laval', 'Soldat de fortune', 'Fée', 4, 4, 1, 0, 33, 24, 31, 29, 27, 4, 0, 5, 3, 3, 9, 1, 1, 1, 1, 1, 5, 1, 0, 1, 1, 2, -1, 1, 1, 1, 0, '1 BA = -1 pts de dégâts subit\n1 BA = Prend  les dégâts a la place de quelqu\'un ', 'assets/img/xacthu.jpg', NULL, NULL),
+(33, 0, 'Arthur', 'Arthur', 'Kobolds', 'Mâle', 'Gernais', 'Scondrel', 'Voyageur', 6, 6, 3, 0, 23, 23, 23, 25, 0, 8, 0, 4, 5, 5, 5, 2, 2, 2, 4, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 0, 1, '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -393,6 +394,30 @@ CREATE TABLE IF NOT EXISTS `t_resume` (
 
 INSERT INTO `t_resume` (`resume_id`, `nom_resume`, `text_resume`, `date_resume`) VALUES
 (1, 'L\'hiver approche', 'Alors que l\'hiver approche, les PJ se sont vus embarqué dans une mission consistant à  abattre un mega compromettant la survie des villageois. En arrivant sur les lieux du MEGA, les Pjs se sont retrouvés face à un chalutier de l\'hier, ils sont donc rentrés pour trouver des traces d\'éventuels survivants...', '2018-12-19 23:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_user`
+--
+
+DROP TABLE IF EXISTS `t_user`;
+CREATE TABLE IF NOT EXISTS `t_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `prenom_user` varchar(60) NOT NULL,
+  `nom_user` varchar(60) NOT NULL,
+  `mail_user` varchar(120) NOT NULL,
+  `mdp_user` varchar(300) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_user`
+--
+
+INSERT INTO `t_user` (`user_id`, `prenom_user`, `nom_user`, `mail_user`, `mdp_user`) VALUES
+(1, 'Antoine', 'Miloux', 'antoinemiloux@icloud.com', 'azerty'),
+(2, 'Matthieu', 'Foltzer', 'foltzer.matthieu@gmail.com', 'azerty');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
