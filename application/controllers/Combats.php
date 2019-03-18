@@ -19,7 +19,7 @@ class Combats extends CI_Controller {
     $query = $this->db->get('t_attaque');
     $data['attaques'] = $query->result();
 
-  $data['arme_user'] = [];
+    $data['arme_user'] = [];
 
 
     $this->db->where('user_id', $id_select_user);
@@ -33,7 +33,7 @@ class Combats extends CI_Controller {
        array_push($data['arme_user'], $query->row_array()) ;
 
     }
-    $this->load->view('modal/modal_attaque', $data);
+    $this->load->view('combat/modal/modal_attaque', $data);
   }
 
   function calcul_cap_off()
@@ -103,5 +103,6 @@ class Combats extends CI_Controller {
       $this->db->update('t_mob', $data_update);
     }
   }
+
 
 }

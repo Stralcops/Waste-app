@@ -1,6 +1,7 @@
+<?php
+$log_utilisateur = $this->session->userdata('log_utilisateur');
+ ?>
 <!doctype html>
-
-
 <head>
   <meta charset="utf-8">
 
@@ -11,9 +12,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 
   <!-- <link rel="shortcut icon" href="/wasteland/favicon.ico"> -->
   <!-- <link rel="apple-touch-icon" href="/wasteland/apple-touch-icon.png"> -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/materialize.css">
+
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/waste.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/global.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
@@ -39,12 +43,22 @@
 
     <nav>
       <ul class="flex-center">
-        <li><a href="">Accueil</a></li>
-        <li><a href="">Les joueurs</a></li>
-        <li><a href="">Combats</a></li>
+        <li><a href="<?php echo base_url() ?>">Accueil</a></li>
+        <li><a href="<?php echo base_url() ?>joueurs">Les joueurs</a></li>
+        <li><a href="<?php echo base_url() ?>combat">Combats</a></li>
         <li><a href="">Cartes</a></li>
         <li><a href="">Scénarios</a></li>
-        <li><a href="">Boutique</a></li>
+        <?php if($log_utilisateur['connect'] == "true")
+        {
+          ?>
+          <li><a href="<?php echo base_url() ?>pages/deconnexion">Déconnexion</a></li>
+          <?php
+        }else{
+          ?>
+          <li><a href="<?php echo base_url() ?>connexion">Connexion</a></li>
+          <?php
+        } ?>
+        <!-- <li><a href="">Boutique</a></li> -->
       </ul>
     </nav>
 
@@ -54,6 +68,8 @@
 
     <header>
     </header>
+<div class="content" style="margin-top: -225px">
+
     <!--
     <aside id="news">
     <h3>Actualités</h3>
@@ -62,5 +78,3 @@
   </ul>
 
 </aside> -->
-
-<section>

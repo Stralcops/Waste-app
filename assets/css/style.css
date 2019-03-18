@@ -1,3 +1,68 @@
+.photo_pj img
+{
+  border: solid 3px;
+}
+
+
+.blockers
+{
+   z-index: 100000 !important;
+}
+
+.mxw-170{
+  max-width: 170px;
+}
+.name
+{
+  /* background-image: url("<?php echo base_url() ?>assets/img/planchecontour.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px !important;
+  padding: 25px;
+
+  padding-bottom: 20px;
+  background-position: center;
+}
+.cadre
+{
+  background: url('<?php echo base_url("assets/img/cadre.png") ?>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.portrait
+{
+  background-image: url("<?php echo base_url() ?>assets/img/portrait_rond.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top:-25px;
+  left: -25px;
+}
+.mob
+{
+  background-image: url("<?php echo base_url() ?>assets/img/planchecontour.png");
+  width: 35%;
+  /* width: 100px; */
+}
+.boutton
+{
+  background-image: url("<?php echo base_url() ?>assets/img/button.png");
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+/*
+
+
 /*  HTML5 ✰ Boilerplate  */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -83,13 +148,6 @@ button {  width: auto; overflow: visible; }
 .clearfix { zoom: 1; }
 
 
- /* Primary Styles
-    Author:
- */
-
-
-
-
 
 
 
@@ -112,8 +170,6 @@ button {  width: auto; overflow: visible; }
 
 @media screen and (max-device-width: 480px) {
 
-
-  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 .flex-center
 {
@@ -200,4 +256,4 @@ button {  width: auto; overflow: visible; }
 .sticky
 {
   position: sticky !important;
-}
+} */

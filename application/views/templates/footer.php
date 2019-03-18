@@ -7,24 +7,19 @@
 </ul>
 
 </aside> -->
+</div>
 
 <div id="modal1" class="modal">
 
 </div>
 
-<section>
 
 
-
-</section>
-
-<footer></footer>
 
 </article>
 
 
 
-</div>
 
 <!--JavaScript at end of body for optimized loading-->
 <!-- <script type="text/javascript" src="<?php echo base_url() ?>assets/js/materialize.js"></script> -->
