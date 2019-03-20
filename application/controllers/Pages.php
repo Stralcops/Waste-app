@@ -40,7 +40,7 @@ class Pages extends CI_Controller {
 
              $query = $this->db->get('t_mob');
              $data['mob'] = $query->result();
-
+             $data['combat_id'] = 1;
    	         $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
              $this->load->view('templates/header', $page, $data);
              $this->load->view('pages/'.$page, $data);

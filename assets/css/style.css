@@ -1,9 +1,56 @@
+
+
+
+[type="checkbox"] + span:not(.lever):before, [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    z-index: 0;
+    border: 2px solid #000000 !important;
+    border-radius: 1px;
+    margin-top: 3px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+[type="checkbox"]:checked + span:not(.lever):before {
+    top: -4px;
+    left: -5px;
+    width: 12px;
+    height: 22px;
+    border-top: 2px solid transparent !important;
+    border-left: 2px solid transparent !important;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+select {
+display: block !important;
+}
 .photo_pj img
 {
   border: solid 3px;
 }
 .liste_competences tr{
   border: solid 2px;
+}
+.liste_arme tr{
+  border: solid 2px;
+}
+.liste_arme tr td{
+  border: solid 2px;
+  padding: 5px;
+}
+.liste_arme tr th{
+  border: solid 2px;
+  padding: 5px;
 }
 .liste_competences td,.liste_competences th {
   padding-top: 5px;
@@ -36,6 +83,16 @@
   background: url('<?php echo base_url("assets/img/cadre.png") ?>');
   background-repeat: no-repeat;
   background-size: contain;
+}
+.cadre {
+    background-color: #dcddcf !important;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100px;
+    width: 257px !important;
+    z-index: 2;
+    z-index: 5;
 }
 .portrait
 {

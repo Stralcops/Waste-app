@@ -1,7 +1,60 @@
-
+var base_url = "http://localhost:8000/waste-app/";
 
 $(document).ready(function()
 {
+$(".select2").select2();
+   $('.tooltipped').tooltip();
+
+
+$("#select_combat").change(function()
+{
+  $("#liste_mob_combat").load(base_url +"combats/liste_mob_combat", {
+    "combat_id" : $("#select_combat").val()
+  });
+});
+
+  $('.dropdown-trigger').dropdown();
+
+
+
+
+$("#ajout_mob").click(function()
+{
+  var data = {
+    "select_mob" : $("#select_mob").val(),
+    "combat_id" : $('#select_combat').val()
+  };
+
+  $.ajax({
+    url:base_url +"combats/add_mob",
+    type:"POST",
+    data : data,
+    success: function(result)
+    {
+
+      $("#liste_mob_combat").load(base_url +"combats/liste_mob_combat", {
+        "combat_id" : $("#select_combat").val()
+      });
+      console.log(result);
+
+    },
+    error: function(result)
+    {
+      alert('erreur');
+
+    }
+  });
+});
+
+
+
+$("#ajout_combat").click(function()
+{
+  $('#modal1').load(base_url+'combats/modal_add_combat');
+  $('.blocker').css('z-index', "99999");
+  $('#modal1').modal('open');
+
+});
 
     $('.dataTable').DataTable({
         "language": {
