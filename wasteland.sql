@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 18 mars 2019 à 17:30
+-- Généré le :  mer. 20 mars 2019 à 17:47
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `t_arme_user` (
   `user_id` int(11) NOT NULL,
   `arme_id` int(11) NOT NULL,
   PRIMARY KEY (`id_arme_user`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_arme_user`
@@ -131,7 +131,8 @@ INSERT INTO `t_arme_user` (`id_arme_user`, `user_id`, `arme_id`) VALUES
 (14, 32, 12),
 (15, 27, 40),
 (17, 27, 41),
-(18, 27, 16);
+(18, 27, 16),
+(22, 31, 39);
 
 -- --------------------------------------------------------
 
@@ -244,6 +245,29 @@ INSERT INTO `t_attaque` (`id_attaque`, `nom_attaque`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `t_combat`
+--
+
+DROP TABLE IF EXISTS `t_combat`;
+CREATE TABLE IF NOT EXISTS `t_combat` (
+  `combat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_combat` varchar(60) NOT NULL,
+  `lieu_combat` int(11) NOT NULL,
+  PRIMARY KEY (`combat_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_combat`
+--
+
+INSERT INTO `t_combat` (`combat_id`, `nom_combat`, `lieu_combat`) VALUES
+(12, 'Chez ta mère', 0),
+(11, 'Bromelech', 0),
+(10, 'Brieuk', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `t_mob`
 --
 
@@ -282,6 +306,54 @@ INSERT INTO `t_mob` (`mob_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_
 (23, 'Loup', 35, 35, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
 (24, 'Quantrill', 27, 27, 21, 21, 4, 3, 3, 6, 5, 5, 3, 2, 7, 3, 5, 0, 13, 16, 'Épée :  1d8+4.\r\n\r\nplus d\'info page 95 du Chemin des cendres.'),
 (25, 'Mercenaire', 23, 23, 19, 19, 4, 3, 2, 5, 4, 5, 2, 3, 2, 2, 5, 0, 12, 17, 'Épée : 1d6+3 ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_mob_combat`
+--
+
+DROP TABLE IF EXISTS `t_mob_combat`;
+CREATE TABLE IF NOT EXISTS `t_mob_combat` (
+  `combat_mob_id` int(11) NOT NULL AUTO_INCREMENT,
+  `mob_id` int(11) NOT NULL,
+  `combat_id` int(11) NOT NULL,
+  `nom_mob` varchar(60) NOT NULL,
+  `hp_mob` int(11) NOT NULL,
+  `chp_mob` int(11) NOT NULL,
+  `psy_mob` int(11) NOT NULL,
+  `cpsy_mob` int(11) NOT NULL,
+  `adr_mob` int(11) NOT NULL,
+  `cla_mob` int(11) NOT NULL,
+  `pre_mob` int(11) NOT NULL,
+  `pui_mob` int(11) NOT NULL,
+  `tre_mob` int(11) NOT NULL,
+  `melee_mob` int(11) NOT NULL,
+  `mouv_mob` int(11) NOT NULL,
+  `perc_mob` int(11) NOT NULL,
+  `coer_mob` int(11) NOT NULL,
+  `survie_mob` int(11) NOT NULL,
+  `vitesse_mob` int(11) NOT NULL,
+  `init_mob` int(11) NOT NULL,
+  `cap_off_mob` int(11) NOT NULL,
+  `def_mob` int(11) NOT NULL,
+  `attaque_mob` text NOT NULL,
+  PRIMARY KEY (`combat_mob_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=401 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `t_mob_combat`
+--
+
+INSERT INTO `t_mob_combat` (`combat_mob_id`, `mob_id`, `combat_id`, `nom_mob`, `hp_mob`, `chp_mob`, `psy_mob`, `cpsy_mob`, `adr_mob`, `cla_mob`, `pre_mob`, `pui_mob`, `tre_mob`, `melee_mob`, `mouv_mob`, `perc_mob`, `coer_mob`, `survie_mob`, `vitesse_mob`, `init_mob`, `cap_off_mob`, `def_mob`, `attaque_mob`) VALUES
+(400, 25, 12, 'Mercenaire', 23, 23, 19, 19, 4, 3, 2, 5, 4, 5, 2, 3, 2, 2, 5, 0, 12, 17, 'Épée : 1d6+3 '),
+(394, 18, 0, 'Décapode ', 12, 1, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.'),
+(397, 18, 10, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.'),
+(398, 23, 12, 'Loup', 35, 35, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
+(399, 24, 12, 'Quantrill', 27, 27, 21, 21, 4, 3, 3, 6, 5, 5, 3, 2, 7, 3, 5, 0, 13, 16, 'Épée :  1d8+4.\r\n\r\nplus d\'info page 95 du Chemin des cendres.'),
+(396, 18, 10, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.'),
+(395, 18, 0, 'Décapode ', 12, 2, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.'),
+(393, 18, 11, 'Décapode ', 12, 12, 0, 0, 2, 3, 2, 6, 4, 4, 2, 3, 0, 0, 6, 0, 10, 13, 'Pinces: 1d4+3 et poison aspic. CF page 157 livre base.');
 
 -- --------------------------------------------------------
 
@@ -408,6 +480,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `nom_user` varchar(60) NOT NULL,
   `mail_user` varchar(120) NOT NULL,
   `mdp_user` varchar(300) NOT NULL,
+  `statut_user` int(11) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -415,9 +488,9 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 -- Déchargement des données de la table `t_user`
 --
 
-INSERT INTO `t_user` (`user_id`, `prenom_user`, `nom_user`, `mail_user`, `mdp_user`) VALUES
-(1, 'Antoine', 'Miloux', 'antoinemiloux@icloud.com', 'azerty'),
-(2, 'Matthieu', 'Foltzer', 'foltzer.matthieu@gmail.com', 'azerty');
+INSERT INTO `t_user` (`user_id`, `prenom_user`, `nom_user`, `mail_user`, `mdp_user`, `statut_user`) VALUES
+(1, 'Antoine', 'Miloux', 'antoinemiloux@icloud.com', 'azerty', 1),
+(2, 'Matthieu', 'Foltzer', 'foltzer.matthieu@gmail.com', 'azerty', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

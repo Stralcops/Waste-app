@@ -26,68 +26,63 @@
           foreach ($query_user_arme as $info_arme_user) {
             $id_arme = $info_arme_user['arme_id'];
             $this->db->where('arme_id', $id_arme);
-            $this->db->where('type_arme', 1);
-            $this->db->or_where('type_arme', 2);
             $query = $this->db->get('t_arme');
             $query_arme = $query->row_array();
-            ?>
-            <option value="<?php echo $query_arme['arme_id'] ?>"><?php echo $query_arme['nom_arme'] ?></option>
-            <?php
-          }
-          ?>
+            if($query_arme['type_arme'] == 1 OR $query_arme['type_arme'] == 2 )
+            {
+              ?>
+              <option value="<?php echo $query_arme['arme_id'] ?>"><?php echo $query_arme['nom_arme'] ?></option>
+            <?php   }
+          } ?>
         </optgroup>
-        <?php
-        $this->db->where('user_id', $id_pj);
-        $query = $this->db->get('t_arme_user');
-        $query_user_arme = $query->result_array();
-        ?>
         <optgroup label="Distance">
           <?php
           foreach ($query_user_arme as $info_arme_user) {
             $id_arme = $info_arme_user['arme_id'];
             $this->db->where('arme_id', $id_arme);
-            $this->db->where('type_arme', 3);
-            $this->db->or_where('type_arme', 4);
             $query = $this->db->get('t_arme');
             $query_arme = $query->row_array();
-            ?>
-            <option value="<?php echo $query_arme['arme_id'] ?>"><?php echo $query_arme['nom_arme'] ?></option>
-            <?php
-          }
-          ?>
-        </optgroup>
+            if($query_arme['type_arme'] == 3 OR $query_arme['type_arme'] == 4 )
+            {
+              ?>
+          <option value="<?php echo $query_arme['arme_id'] ?>"><?php echo $query_arme['nom_arme'] ?></option>
+        <?php   }
+      } ?>
 
-      </select>
 
-    </div>
+      </optgroup>
 
-    <div  class=" col s6">
-      <select id="type_attaque" style="display: block">
-        <option value="" disabled selected>Type d'attaque</option>
-        <option value="1">Assaut</option>
-        <option value="2">Coup bas</option>
-        <option value="3">Feinte</option>
-        <option value="4">Attaque précise</option>
-      </select>
-    </div>
+    </select>
+
   </div>
 
-  <div class="row ">
-    <div  class=" col s1">
-      <label for="">Dé :</label>
-    </div>
-    <div  class=" col s3 ">
-      <select id="type_de" style="display: block">
-        <option value="" disabled selected>Type de dé</option>
-        <option value="1">10</option>
-        <option value="2">20</option>
-
-      </select>
-    </div>
-    <div  class=" col s2">
-      <input id="result_de" class="col s12 f-20" type="number" name="" value="">
-    </div>
+  <div  class=" col s6">
+    <select id="type_attaque" style="display: block">
+      <option value="" disabled selected>Type d'attaque</option>
+      <option value="1">Assaut</option>
+      <option value="2">Coup bas</option>
+      <option value="3">Feinte</option>
+      <option value="4">Attaque précise</option>
+    </select>
   </div>
+</div>
+
+<div class="row ">
+  <div  class=" col s1">
+    <label for="">Dé :</label>
+  </div>
+  <div  class=" col s3 ">
+    <select id="type_de" style="display: block">
+      <option value="" disabled selected>Type de dé</option>
+      <option value="1">10</option>
+      <option value="2">20</option>
+
+    </select>
+  </div>
+  <div  class=" col s2">
+    <input id="result_de" class="col s12 f-20" type="number" name="" value="">
+  </div>
+</div>
 
 </div>
 <div class="modal-footer">
