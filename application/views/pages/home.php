@@ -486,7 +486,6 @@ if($log_utilisateur['connect'] == "true" AND $log_utilisateur['statut_user'] != 
 
                           }
                           ?>
-
                         </tbody>
                       </table>
                     </div>
