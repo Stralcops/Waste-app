@@ -25,7 +25,7 @@ $("div #ajout_combat").click(function()
     type: "POST",
     success: function(result)
     {
-      console.log(result);
+      location.reload();
     },
     error: function(result)
     {

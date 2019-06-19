@@ -321,4 +321,7 @@ button {  width: auto; overflow: visible; }
 .sticky
 {
   position: sticky !important;
-} */
+}
+.collapsible{
+
+}

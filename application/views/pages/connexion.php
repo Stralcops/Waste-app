@@ -8,16 +8,14 @@
             <br/>
             <h2 class="center td-u">Connexion</h2>
             <span id='msgErreurId' class="red-text center-align col l12 " ></span>
-            <div class="input-field col  l12  s12 valign-wrapper">
-              <i class="material-icons prefix">email</i>
+            <div class="input-field col connexionInput  l12  s12 valign-wrapper">
               <input name="mail_user" id="email" type="email" class="validate">
               <label for="mail_user">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col  l12  s12">
-              <i class="material-icons prefix">lock</i>
-              <input name="mdp_user" id="mdp" type="password" class="validate">
+              <input name="mdp_user" id="mdp" type="password" class=" connexionInput">
               <label for="mdp_user">Mot de passe</label>
             </div>
           </div>

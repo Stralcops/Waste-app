@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pages extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
    public function __construct(){
  	 parent::__construct();
 
@@ -28,16 +13,19 @@ class Pages extends CI_Controller {
  	//	$this->load->library('session');
  		// Load database
  		$this->load->model('login_database');
+ 		$this->load->model('general_model');
  		$this->load->library('session');
  	  $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
  	}
            public function view($page = 'home')
            {
 
+             // trnsl.1.1.20190618T130850Z.42e4c7ab9e43d05a.804acd6d9c832a790d0fe3b0794bd0ad708da771
+
              $this->db->where("pj_id !=", 27);
              $query = $this->db->get('t_pj');
              $data['pj'] = $query->result();
-
+             $data['resume'] = $this->general_model->get_table('t_resume');
              $query = $this->db->get('t_mob');
              $data['mob'] = $query->result();
              $data['combat_id'] = 1;

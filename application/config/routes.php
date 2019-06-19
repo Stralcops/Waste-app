@@ -53,5 +53,8 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['combats/liste_mob_combat'] = "combats/liste_mob_combat";
+$route['mobs'] = "mobs";
+
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';

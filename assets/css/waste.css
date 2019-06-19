@@ -42,7 +42,8 @@ body > header nav ul li {
   list-style: none;
   font-family: 'NofretRegular', georgia, arial, serif;
   border-right: 1px solid #444;
-  padding: 0 2em;
+  padding-right: 2em;
+  padding-left:  2em;
 }
 body > header nav ul li:last-child {
   border-right: 0px;
@@ -50,7 +51,7 @@ body > header nav ul li:last-child {
 body > header nav ul li a,
 body > header nav ul li a:active,
 body > header nav ul li a:visited {
-  color: #333!important;
+  color: #333;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
@@ -778,4 +779,34 @@ article#contact section textarea {
 
   padding: 12px;
   margin: 6px;
+}
+.collapsible li {
+  background-color: white !important;
+}
+.dropdown{
+  position: relative;
+}
+.dropdown-content{
+display: flex;
+flex-direction: column;
+padding-top: 0px;
+background-color: #4d3e37;
+overflow-x: hidden;
+border-image: url("../img/bg-bois-horiz.jpg") 27 23 / 50px 30px / 1rem round space;;  
+
+}
+.dropdown-content li{
+  border: none;
+  width: 100%;
+  min-height: 30px;
+  padding: 0;
+  text-align: center;
+}
+.dropdown-content li:hover{
+  background-color: transparent !important;
+
+
+}
+.dropdown-content li a{
+  color:white !important;
 }

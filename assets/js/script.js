@@ -1,7 +1,10 @@
-var base_url = "http://localhost:8000/waste-app/";
+var base_url = "http://localhost/waste-app/";
 
 $(document).ready(function()
 {
+    $('.collapsible').collapsible();
+$('#liste_mob').DataTable();
+
 $(".select2").select2();
    $('.tooltipped').tooltip();
 
@@ -15,7 +18,10 @@ $("#select_combat").change(function()
 
   $('.dropdown-trigger').dropdown();
 
-
+$(".dropdown").mouseover(function(){
+  var target = $(this).attr('data-target');
+  // $(target).css(");
+})
 
 
 $("#ajout_mob").click(function()
@@ -41,6 +47,7 @@ $("#ajout_mob").click(function()
     error: function(result)
     {
       alert('erreur');
+      console.log(result)
 
     }
   });

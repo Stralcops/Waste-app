@@ -44,7 +44,12 @@ $log_utilisateur = $this->session->userdata('log_utilisateur');
         <li><a href="<?php echo base_url() ?>">Accueil</a></li>
         <li><a href="<?php echo base_url() ?>joueurs">Les joueurs</a></li>
         <li><a href="<?php echo base_url() ?>combat">Combats</a></li>
-        <li><a href="">Cartes</a></li>
+        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Ressources</a>
+          <ul id='dropdown1' class='dropdown-content'>
+             <li><a href="<?php echo base_url("mobs") ?>">Mobs</a></li>
+             <li><a href="#!">Cartes</a></li>
+          </ul>
+
         <li><a href="">Scénarios</a></li>
         <?php if($log_utilisateur['connect'] == "true")
         {
