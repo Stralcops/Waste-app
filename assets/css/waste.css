@@ -762,10 +762,13 @@ article#contact aside img {
   /* Opera 10.5, IE9, Chrome 10+ */
 
 }
+.input{
+  display: block; 
+}
 article#contact section input,
 article#contact section textarea {
   border: 1px solid #a6a884;
-  display: block;
+  /* display: block; */
   width: 300px;
   line-height: 16px;
   -moz-border-radius: 8px;
@@ -792,7 +795,7 @@ flex-direction: column;
 padding-top: 0px;
 background-color: #4d3e37;
 overflow-x: hidden;
-border-image: url("../img/bg-bois-horiz.jpg") 27 23 / 50px 30px / 1rem round space;;  
+border-image: url("../img/bg-bois-horiz.jpg") 27 23 / 50px 30px / 1rem round space;;
 
 }
 .dropdown-content li{

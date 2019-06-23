@@ -31,9 +31,7 @@
     -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
 }
-select {
-display: block !important;
-}
+
 .photo_pj img
 {
   border: solid 3px;
@@ -85,7 +83,7 @@ display: block !important;
   background-size: contain;
 }
 .cadre {
-    background-color: #dcddcf !important;
+    background-color: #dcddcf ;
     display: flex;
     justify-content: center;
     position: relative;

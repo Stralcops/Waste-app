@@ -14,6 +14,11 @@
   ?>
   <h4><?php echo $query_user['nom_user'] ;?> attaque <?php echo $query_mob['nom_mob']; ?> </h4>
   <div class="row">
+    <?php if($result == 2){
+      ?>
+      C'est une attaqe critique !
+      <?php
+    } ?>
     <div class="col s12">
       <span>  Résultat du dé :</span>
       <input class="f-20" id="de_degats" type="number" name="" value="">
@@ -31,6 +36,7 @@ $("#attaque").click(function()
     de_degats : $("#de_degats").val(),
     id_mob : <?php echo $id_mob ?>,
     id_pj : <?php echo $id_pj ?>,
+    result : <?php echo $result ?>,
   };
   console.log(data);
   $.ajax({
@@ -39,16 +45,22 @@ $("#attaque").click(function()
     type: "POST",
     success: function(result)
     {
-        $("#modal1").modal("close");
+      $("#modal1").modal("close");
 
-              $("#liste_mob_combat").load(base_url +"combats/liste_mob_combat", {
-                "combat_id" : $("#select_combat").val()
-              });
-                $(".phrase_info").html(result);
+      $("#liste_mob_combat").load(base_url +"combats/liste_mob_combat", {
+        "combat_id" : $("#select_combat").val(),
+        "result" : result
+      });
+      $(".phrase_info").html();
+      Swal.fire(
+        "L'attaque a réussi !",
+        result,
+        'success'
+      );
     },
     error: function(result)
     {
-
+      console.log(result);
     }
   });
 });

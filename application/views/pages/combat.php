@@ -3,7 +3,7 @@
 
 <div class="row  valign-wrapper">
   <div class="col s6 valign-wrapper">
-    <select id="select_combat" class="select2" name="">
+    <select id="select_combat" class="select2 input" name="">
       <option disabled selected value="">Combat</option>
       <?php
       $query = $this->db->get('t_combat');
@@ -19,7 +19,7 @@
       <label for=""><i class="material-icons brown-text">add_circle</i></label>
     </div>
   </div>
-  <select id="select_mob" class="col s6 select2" name="">
+  <select id="select_mob" class="col s6 select2 input" name="">
     <?php  foreach ($mob as $info_mob) {
       ?>
       <option value="<?php echo $info_mob->mob_id ?>"><?php echo $info_mob->nom_mob ?></option>
@@ -98,7 +98,7 @@
   </div>
 
   <div id="liste_mob_combat" class="col s6 ">
-    <?php
+    <!-- <?php
     // $combat_id = 1;
     // $this->db->where('combat_id', $combat_id);
     $query = $this->db->get('t_mob_combat');
@@ -133,7 +133,7 @@
 
 
       <?php
-    } ?>
+    } ?> -->
 
   </div>
 </div>

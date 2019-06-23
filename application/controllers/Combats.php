@@ -39,6 +39,7 @@ class Combats extends CI_Controller {
   {
     $id_select_user = $_POST['id_mob'];
     $id_select_mob = $_POST['id_pj'];
+    $result = $_POST['result'];
 
     $this->db->where('user_id', $id_select_user);
     $query = $this->db->get('t_pj');
@@ -49,11 +50,11 @@ class Combats extends CI_Controller {
     $data['mob_select']= $query->row_array();
 
     $query = $this->db->get('t_attaque');
-    $data['attaques'] = $query->result();
+    $data['attaques'] = $query->row_array();
 
     $data['arme_user'] = [];
 
-
+    $data['result'] = $result;
     $this->db->where('user_id', $id_select_user);
     $query = $this->db->get('t_arme_user');
     $query_arme_user = $query->result();
@@ -95,7 +96,6 @@ class Combats extends CI_Controller {
   {
     $id_arme = $_POST['id_arme'];
     $id_mob = $_POST['id_mob'];
-
     $this->db->where('arme_id', $id_arme);
     $query = $this->db->get('t_arme');
     $data['arme'] = $query->row_array();
@@ -189,7 +189,13 @@ class Combats extends CI_Controller {
     $query = $this->db->get('t_mob_combat');
     $query_mob = $query->row_array();
     $chp_mob = $query_mob['chp_mob'];
-    $chp_mob = $chp_mob - $degats;
+    $result = $_POST['result'];
+    if($result == 2){
+      $chp_mob = $chp_mob - $degats*2;
+    }
+    else {
+      $chp_mob = $chp_mob - $degats;
+    }
 
     $data = array(
       'chp_mob' => $chp_mob,
@@ -197,8 +203,14 @@ class Combats extends CI_Controller {
 
     $this->db->where('combat_mob_id', $id_mob);
     $this->db->update('t_mob_combat', $data);
+    if($chp_mob < 1){
+      echo $query_mob['nom_mob']." à pris ".$degats." !  Il est mort.";
 
-    echo $query_mob['nom_mob']." à pris ".$degats." ! Il a maitenant ".$chp_mob." PV";
+    }
+    else{
+      echo $query_mob['nom_mob']." à pris ".$degats." !  Il a maitenant ".$chp_mob." PV";
+
+    }
   }
   public function add_mob()
   {

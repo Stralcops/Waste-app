@@ -17,7 +17,7 @@ class Pages extends CI_Controller {
  		$this->load->library('session');
  	  $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
  	}
-           public function view($page = 'home')
+           public function view($page = 'home', $erreur=0)
            {
 
              // trnsl.1.1.20190618T130850Z.42e4c7ab9e43d05a.804acd6d9c832a790d0fe3b0794bd0ad708da771
@@ -25,17 +25,18 @@ class Pages extends CI_Controller {
              $this->db->where("pj_id !=", 27);
              $query = $this->db->get('t_pj');
              $data['pj'] = $query->result();
-             $data['resume'] = $this->general_model->get_table('t_resume');
+             $data['resume'] = $this->general_model->get_table('t_resume', "DESC");
              $query = $this->db->get('t_mob');
              $data['mob'] = $query->result();
              $data['combat_id'] = 1;
    	         $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
+             $data['erreur_identifiants'] = $erreur;
              $this->load->view('templates/header', $page, $data);
              $this->load->view('pages/'.$page, $data);
              $this->load->view('templates/footer', $data);
            }
 
-           	public function form_connexion(){
+         	public function form_connexion(){
            			$data = array(
            			'mail_user' => $this->input->post('mail_user'),
            			'mdp_user' => $this->input->post('mdp_user')
@@ -66,7 +67,7 @@ class Pages extends CI_Controller {
            					redirect(base_url());
            				}
            		} else {
-           			echo "false";
+               	redirect(base_url("connexion/1"));
            		}
            	}
            	public function deconnexion() {

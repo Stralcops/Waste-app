@@ -92,7 +92,7 @@
 <script type="text/javascript">
 $("#attaque").click(function()
 {
-  data = {
+  var data = {
     arme_id : $("#arme_id").val(),
     type_attaque : $("#type_attaque").val(),
     type_de : $("#type_de").val(),
@@ -110,9 +110,24 @@ $("#attaque").click(function()
       if(result == "0")
       {
         $("#modal1").modal('close');
-        $(".phrase_info").html("L'attaque a échouée !");
+        $(".phrase_info").html(" !");
+        Swal.fire(
+          "L'L'attaque a échouée !",
+          "L'ennemi a évité votre attaque",
+          'error'
+        )
       }
-      else if(result == "1")
+      // else if(result == "1")
+      // {
+      //   $('#modal1').load('<?php echo base_url() ?>combats/modal_degats', {
+      //     id_mob : <?php echo $id_mob ?>,
+      //     id_pj : <?php echo $id_pj ?>,
+      //     id_arme : $("#arme_id").val(),
+      //     result: result
+      //   });
+      //
+      // }
+      else if(result != "0")
       {
         $('#modal1').load('<?php echo base_url() ?>combats/modal_degats', {
           id_mob : <?php echo $id_mob ?>,
@@ -126,7 +141,7 @@ $("#attaque").click(function()
     },
     error: function(result)
     {
-
+      console.log(result);
     }
   });
 });

@@ -12,15 +12,15 @@ $log_utilisateur = $this->session->userdata('log_utilisateur');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+    <!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css"> -->
 
   <!-- <link rel="shortcut icon" href="/wasteland/favicon.ico"> -->
   <!-- <link rel="apple-touch-icon" href="/wasteland/apple-touch-icon.png"> -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/materialize.css">
-
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/waste.css">
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/global.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 
 
@@ -42,11 +42,12 @@ $log_utilisateur = $this->session->userdata('log_utilisateur');
     <nav>
       <ul class="flex-center">
         <li><a href="<?php echo base_url() ?>">Accueil</a></li>
-        <li><a href="<?php echo base_url() ?>joueurs">Les joueurs</a></li>
+        <li><a href="<?php echo base_url() ?>joueurs"><?php if($log_utilisateur['statut_user'] == 1){?> Les joueurs  <?php }else{ ?> Mon PJ<?php }?> </a></li>
         <li><a href="<?php echo base_url() ?>combat">Combats</a></li>
         <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Ressources</a>
           <ul id='dropdown1' class='dropdown-content'>
              <li><a href="<?php echo base_url("mobs") ?>">Mobs</a></li>
+             <li><a href="<?php echo base_url("pnj") ?>">PNJ</a></li>
              <li><a href="#!">Cartes</a></li>
           </ul>
 

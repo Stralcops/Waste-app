@@ -20,8 +20,32 @@ class Mobs extends CI_Controller {
 
 
   public function index(){
-    $this->load->view("templates/header");
-    $this->load->view("mobs/index.php");
-    $this->load->view("templates/footer");
+      $data['mob'] = $this->mob_model->get_mob();
+    $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
+    $this->load->view("templates/header", $data);
+    $this->load->view("mobs/index.php", $data);
+    $this->load->view("templates/footer", $data);
+  }
+  public function form($type="update", $id){
+    $data['log_utilisateur'] = $this->session->userdata('log_utilisateur');
+
+
+    $data['type'] = $type;
+    $data['mob_update'] =   $this->pnj_model->get_mob_id($id);
+
+    $this->load->view("templates/header",$data);
+    $this->load->view("mob/form",$data);
+    $this->load->view("templates/footer",$data);
+  }
+  public function update($id){
+    $data_update = array(
+      "nom_mob" => $_POST['nom_mob'],
+      "attaque_mob" => $_POST['attaque_mob'],
+    );
+    $this->db->where("mob_id", $id);
+    if($this->db->update('t_mob', $data_update))
+    {
+      redirect(base_url('mob'));
+    }
   }
 }

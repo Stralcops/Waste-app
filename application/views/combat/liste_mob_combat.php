@@ -5,9 +5,19 @@ $query = $this->db->get('t_mob_combat');
 $query_mob = $query->result();
  foreach ($query_mob as $info_mob) {
   $pc_vie = $info_mob->chp_mob*100/$info_mob->hp_mob;
+  if(  $pc_vie <1){
+    ?>
+    <div class="">
+      <img style="position: absolute" height="100px" src="https://cdn.pixabay.com/photo/2012/04/12/19/37/skull-and-crossbones-30325_960_720.png" alt="">
+    </div>
+
+    <?php
+  }
   ?>
+
   <div class="mt-35 draggable droppable" data-id="<?php echo $info_mob->combat_mob_id ?>" >
     <div class="cadre">
+
       <div class="portrait mob">
         <span class="pb-25 tt-u dropdown-trigger"  href='#' data-target='dropdown1'><?php echo $info_mob->nom_mob ?></span>
       </div>
@@ -15,7 +25,7 @@ $query_mob = $query->result();
         <div class="flex">
           <span class="progressBar tt-u td-u">Vie :</span>
           <div class="border mt-20 ml-10">
-            <div class="bgRed" style="height:100%;width:<?php echo $pc_vie ?>%"></div>
+            <div class="bgRed tooltipped"  data-tooltip="<?php echo $info_mob->chp_mob ?>/<?php echo $info_mob->hp_mob ?>"  style="height:100%;width:<?php echo $pc_vie ?>%"></div>
           </div>
         </div>
         <div class="flex">
